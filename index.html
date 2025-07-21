@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido - Ing. Gabriel Fravega</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #e5e5e5; /* gris profesional */
-            color: #111; /* texto bien visible */
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido - Ing. Gabriel Fravega</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e5e5e5;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
-        }
+    h1 {
+      font-size: 2em;
+      margin: 0.2em 0;
+    }
 
-        section {
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            background-color: #ffffff; /* fondo blanco fuerte */
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* sombra más marcada */
-        }
+    main {
+      padding: 10px;
+    }
 
-        img {
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            display: block;
-            margin: 20px auto;
-            height: 150px;
-        }
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 0.9em;
-            color: #555;
-        }
+    section.sobre-mi {
+      background: linear-gradient(to right, #f0f8ff, #e6f0ff); /* azul suave */
+    }
 
-        a {
-            color: #0044cc;
-            text-decoration: none;
-        }
+    section.documentos {
+      background: linear-gradient(to right, #e9fce9, #ddf5dd); /* verde suave */
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    img {
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      display: block;
+      margin: 15px auto;
+      height: 150px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    a {
+      color: #0044cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Gabriel Fravega</h1>
-        <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025)</p>
-    </header>
-    <main>
-        <section>
-            <h2>Sobre mí</h2>
-            <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
-        </section>
-        <section>
-            <h2>Últimos documentos</h2>
-            <ul>
-                <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
-            </ul>
-            <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega">
-        </section>
-    </main>
+  <header>
+    <h1>Gabriel Fravega</h1>
+    <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025)</p>
+  </header>
+  <main>
+    <section class="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
+    </section>
+    <section class="documentos">
+      <h2>Últimos documentos</h2>
+      <ul>
+        <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
+      </ul>
+      <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega">
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
