@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - Ing. Gabriel Fravega</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gabriel Fravega</h1>
+        <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025) - Proyectos de Innovación Científica/Tecnológica</p>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre mí</h2>
+            <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA. con Sustentabilidad Económica e Innovación Aplicada.</p>
+        </section>
+        <section>
+            <h2>Últimos documentos</h2>
+            <ul>
+                               <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
+                <img src="FIRMA3.jpg"
+                    style="height:150px;MARGIN:15PX auto;display:block;"/>
+                                     
+                                    </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
