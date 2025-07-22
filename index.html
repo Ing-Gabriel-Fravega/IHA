@@ -16,7 +16,7 @@
       color: #111;
       margin: 0;
       padding: 0;
-      /* Se eliminó transform: scale(0.8) para permitir control dinámico */
+      /* Zoom inicial se maneja desde JavaScript */
     }
 
     header {
@@ -154,8 +154,8 @@
   <div class="zoom-control">
     <label for="zoom">Zoom:</label>
     <select id="zoom">
-      <option value="0.8">80%</option>
-      <option value="1" selected>100%</option>
+      <option value="0.8" selected>80%</option>
+      <option value="1">100%</option>
       <option value="1.2">120%</option>
     </select>
   </div>
@@ -171,6 +171,14 @@
       mensaje.pitch = 1;
       mensaje.volume = 1;
       speechSynthesis.speak(mensaje);
+    });
+
+    // Establecer zoom inicial desde el valor seleccionado (80%)
+    window.addEventListener('DOMContentLoaded', function () {
+      const selectorZoom = document.getElementById('zoom');
+      const scale = parseFloat(selectorZoom.value);
+      document.body.style.transform = scale(${scale});
+      document.body.style.transformOrigin = 'top center';
     });
 
     // Control de zoom dinámico
