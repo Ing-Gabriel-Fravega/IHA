@@ -2,96 +2,72 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Página 2</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #fff;
+      background-color: black;
+      color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 2rem;
       text-align: center;
+      padding: 2em;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 20px #00f2ff;
+      font-size: 2.5em;
+      color: #00ffff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
     }
 
-    .tech-image {
-      width: 98vw; /* casi todo el ancho del viewport */
-      max-width: 1200px; /* tamaño máximo grande */
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 
-        0 0 40px rgba(0, 242, 255, 0.6), 
-        0 0 80px rgba(0, 242, 255, 0.4), 
-        0 0 120px rgba(0, 242, 255, 0.2);
-      transition: all 0.5s ease-in-out;
-      filter: drop-shadow(0 0 30px #00f2ff);
+    .imagen-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
     }
 
-    .tech-image:hover {
-      transform: scale(1.07);
-      filter: drop-shadow(0 0 60px #00f2ff) brightness(1.2);
-      box-shadow:
-        0 0 60px rgba(0, 255, 255, 0.8),
-        0 0 120px rgba(0, 255, 255, 0.6),
-        0 0 180px rgba(0, 255, 255, 0.4);
+    .imagen-impacto {
+      width: 600px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
     }
 
-    @media (max-width: 600px) {
-      .tech-image {
-        width: 98vw;
-        max-width: none;
-      }
+    .imagen-impacto:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.6);
+      cursor: pointer;
+    }
+
+    .futura-formula {
+      margin-top: 40px;
+      font-size: 1.5em;
+      font-style: italic;
+      color: #ffccff;
+      text-shadow: 0 0 5px #f0f;
     }
   </style>
 </head>
-<body>
-  <h1>Página 2</h1>
-  <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
+<body onload="hablar()">
+  <h1>El inicio de la convergencia definitiva</h1>
+  
+  <div class="imagen-container">
+    <img src="Imagen2.png" alt="Impacto visual" class="imagen-impacto"/>
+  </div>
+
+  <div class="futura-formula">
+    … como si E = mc² encontrara su espejo digital: IA = ?
+  </div>
 
   <script>
-    window.addEventListener('load', () => {
-      const synth = window.speechSynthesis;
-      let voices = [];
-
-      function speak() {
-        const utterance = new SpeechSynthesisUtterance(
-          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
-        );
-        utterance.lang = 'es-ES';  // español de España, puede cambiar según la voz
-        utterance.rate = 0.9;      // un poco más lento
-        utterance.pitch = 1.2;     // tono más agudo (más femenino)
-        utterance.volume = 1;
-
-        // Busca una voz femenina
-        const femaleVoices = voices.filter(voice =>
-          voice.lang.startsWith('es') && voice.gender !== 'male'
-        );
-
-        if(femaleVoices.length > 0) {
-          utterance.voice = femaleVoices[0];
-        } else if(voices.length > 0) {
-          utterance.voice = voices[0];
-        }
-
-        synth.speak(utterance);
-      }
-
-      function loadVoices() {
-        voices = synth.getVoices();
-        if (voices.length !== 0) {
-          speak();
-        }
-      }
-
-      synth.onvoiceschanged = loadVoices;
-      loadVoices();
-    });
+    function hablar() {
+      const mensaje = new SpeechSynthesisUtterance("Has ingresado al núcleo del desarrollo. Aquí nace la fórmula de la inteligencia.");
+      mensaje.lang = "es-ES";
+      mensaje.pitch = 1.4;
+      mensaje.rate = 0.95;
+      mensaje.voice = speechSynthesis.getVoices().find(voice => voice.name.includes("Google") && voice.name.includes("femenina")) || speechSynthesis.getVoices()[0];
+      speechSynthesis.speak(mensaje);
+    }
   </script>
 </body>
 </html>
