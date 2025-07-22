@@ -16,7 +16,12 @@
       color: #111;
       margin: 0;
       padding: 0;
-      /* Zoom inicial se maneja desde JavaScript */
+    }
+
+    #wrapper {
+      transform: scale(0.8);
+      transform-origin: top center;
+      transition: transform 0.3s ease;
     }
 
     header {
@@ -89,7 +94,6 @@
       text-decoration: underline;
     }
 
-    /* Botón de zoom */
     .zoom-control {
       position: fixed;
       bottom: 10px;
@@ -114,41 +118,44 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Gabriel Fravega</h1>
-    <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025)</p>
-  </header>
+  <!-- Contenedor escalable -->
+  <div id="wrapper">
+    <header>
+      <h1>Gabriel Fravega</h1>
+      <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025)</p>
+    </header>
 
-  <div class="container">
-    <div class="left-column">
-      <section class="sobre-mi">
-        <h2>Presentación</h2>
-        <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
-      </section>
+    <div class="container">
+      <div class="left-column">
+        <section class="sobre-mi">
+          <h2>Presentación</h2>
+          <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
+        </section>
 
-      <section class="documentos">
-        <h2>Bases sobre desarrollos tecnológicos disruptivos</h2>
-        <ul>
-          <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
-        </ul>
-        <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" style="display:block; margin:auto; height:150px; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-      </section>
+        <section class="documentos">
+          <h2>Bases sobre desarrollos tecnológicos disruptivos</h2>
+          <ul>
+            <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
+          </ul>
+          <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" style="display:block; margin:auto; height:150px; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        </section>
+      </div>
+
+      <div class="right-column">
+        <section>
+          <h2 style="text-align:center;">Estación Orbital</h2>
+          <video autoplay muted loop playsinline>
+            <source src="video-eorbital.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </section>
+      </div>
     </div>
 
-    <div class="right-column">
-      <section>
-        <h2 style="text-align:center;">Estación Orbital</h2>
-        <video autoplay muted loop playsinline>
-          <source src="video-eorbital.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de video.
-        </video>
-      </section>
-    </div>
+    <footer>
+      <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
-  </footer>
 
   <!-- Botón para cambiar el zoom -->
   <div class="zoom-control">
@@ -173,19 +180,12 @@
       speechSynthesis.speak(mensaje);
     });
 
-    // Establecer zoom inicial desde el valor seleccionado (80%)
-    window.addEventListener('DOMContentLoaded', function () {
-      const selectorZoom = document.getElementById('zoom');
-      const scale = parseFloat(selectorZoom.value);
-      document.body.style.transform = scale(${scale});
-      document.body.style.transformOrigin = 'top center';
-    });
-
-    // Control de zoom dinámico
+    // Zoom dinámico aplicado al wrapper
     document.getElementById('zoom').addEventListener('change', function () {
       const scale = parseFloat(this.value);
-      document.body.style.transform = scale(${scale});
-      document.body.style.transformOrigin = 'top center';
+      const wrapper = document.getElementById('wrapper');
+      wrapper.style.transform = scale(${scale});
+      wrapper.style.transformOrigin = 'top center';
     });
   </script>
 </body>
