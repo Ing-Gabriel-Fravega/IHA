@@ -6,12 +6,18 @@
   <title>Bienvenido - Ing. Gabriel Fravega</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #e5e5e5;
       color: #111;
       margin: 0;
       padding: 0;
+      transform: scale(0.8);
+      transform-origin: top center;
     }
 
     header {
@@ -55,7 +61,6 @@
       background: linear-gradient(to right, #e9fce9, #ddf5dd);
     }
 
-    /* Centrar contenido de la columna derecha */
     .right-column section {
       text-align: center;
     }
@@ -83,6 +88,29 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Botón de zoom */
+    .zoom-control {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #ffffffdd;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    .zoom-control label {
+      margin-right: 6px;
+      font-size: 0.9em;
+    }
+
+    .zoom-control select {
+      font-size: 0.9em;
+      padding: 4px 6px;
     }
   </style>
 </head>
@@ -123,17 +151,35 @@
     <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Botón para cambiar el zoom -->
+  <div class="zoom-control">
+    <label for="zoom">Zoom:</label>
+    <select id="zoom">
+      <option value="0.8" selected>80%</option>
+      <option value="1">100%</option>
+      <option value="1.2">120%</option>
+    </select>
+  </div>
+
   <script>
-  window.addEventListener('load', function () {
-    const mensaje = new SpeechSynthesisUtterance(
-      "Bienvenido al sitio web del ingeniero Gabriel Fravega. Aquí encontrará sus últimos desarrollos en ciencia, tecnología, IHA, TFC, economía e inteligencia aplicada con sustentabilidad. Gracias por su visita."
-    );
-    mensaje.lang = 'es-AR';
-    mensaje.rate = 1;
-    mensaje.pitch = 1;
-    mensaje.volume = 1;
-    speechSynthesis.speak(mensaje);
-  });
+    // Voz bienvenida
+    window.addEventListener('load', function () {
+      const mensaje = new SpeechSynthesisUtterance(
+        "Bienvenido al sitio web del ingeniero Gabriel Fravega. Aquí encontrará sus últimos desarrollos en ciencia, tecnología, IHA, TFC, economía e inteligencia aplicada con sustentabilidad. Gracias por su visita."
+      );
+      mensaje.lang = 'es-AR';
+      mensaje.rate = 1;
+      mensaje.pitch = 1;
+      mensaje.volume = 1;
+      speechSynthesis.speak(mensaje);
+    });
+
+    // Control de zoom dinámico
+    document.getElementById('zoom').addEventListener('change', function () {
+      const scale = parseFloat(this.value);
+      document.body.style.transform = scale(${scale});
+      document.body.style.transformOrigin = 'top center';
+    });
   </script>
 </body>
 </html>
