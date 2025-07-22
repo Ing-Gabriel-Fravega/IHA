@@ -3,134 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Estación Orbital</title>
+  <title>Bienvenido - Ing. Gabriel Fravega</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --zoom: 0.8; /* Zoom inicial: 80% */
-    }
-
     body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e5e5e5;
+      color: #111;
       margin: 0;
       padding: 0;
-      transform: scale(var(--zoom));
-      transform-origin: top left;
-      width: calc(100% / var(--zoom));
-      height: calc(100% / var(--zoom));
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
     }
 
-    .zoom-controls {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      background: white;
-      padding: 10px 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .zoom-controls button {
-      margin: 0 5px;
-      padding: 6px 10px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding: 60px 40px 40px 40px;
-      max-width: 1200px;
-      margin: auto;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .left-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .right-column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
     }
 
     h1 {
-      text-align: center;
       font-size: 2em;
+      margin: 0.2em 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .left-column, .right-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    section {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       margin-bottom: 20px;
     }
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
+    section.sobre-mi {
+      background: linear-gradient(to right, #f0f8ff, #e6f0ff);
     }
 
-    iframe {
-      width: 480px;
-      height: 270px;
+    section.documentos {
+      background: linear-gradient(to right, #e9fce9, #ddf5dd);
+    }
+
+    video {
+      width: 100%;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
 
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
 
-      iframe {
-        width: 100%;
-        height: auto;
-      }
+    a {
+      color: #0044cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Controles de zoom -->
-  <div class="zoom-controls">
-    Zoom:
-    <button onclick="setZoom(1)">100%</button>
-    <button onclick="setZoom(0.9)">90%</button>
-    <button onclick="setZoom(0.8)">80%</button>
-    <button onclick="setZoom(0.7)">70%</button>
-    <button onclick="setZoom(0.6)">60%</button>
-  </div>
+  <header>
+    <h1>Gabriel Fravega</h1>
+    <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025)</p>
+  </header>
 
   <div class="container">
     <div class="left-column">
-      <h1>Centro de Control</h1>
-      <p>
-        Bienvenidos al módulo central de nuestra Estación Orbital. Desde aquí se coordinan
-        todas las operaciones y se visualiza el entorno espacial mediante sistemas avanzados
-        de monitoreo y análisis. Este espacio está diseñado para brindar la máxima eficiencia
-        operativa con inteligencia aumentada.
-      </p>
+      <section class="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
+      </section>
+
+      <section class="documentos">
+        <h2>Últimos documentos</h2>
+        <ul>
+          <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
+        </ul>
+        <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" style="display:block; margin:auto; height:150px; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+      </section>
     </div>
+
     <div class="right-column">
-      <h1>Estación Orbital</h1>
-      <iframe src="https://www.youtube.com/embed/Yf7N8v8M1Mw"
-              title="Estación Orbital"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+      <section>
+        <h2 style="text-align:center;">Estación Orbital</h2>
+       
+        <video autoplay muted loop playsinline width="360" style="float:right; margin: 20px;">
+  <source src="video-eorbital.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+      
+        </video>
+      </section>
     </div>
   </div>
 
-  <!-- Script para cambiar el zoom dinámicamente -->
+  <footer>
+    <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
+  </footer>
   <script>
-    function setZoom(value) {
-      document.documentElement.style.setProperty('--zoom', value);
-    }
-  </script>
+  window.addEventListener('load', function () {
+    const mensaje = new SpeechSynthesisUtterance(
+      "Bienvenido al sitio web del ingeniero Gabriel Fravega. Aquí encontrará sus últimos desarrollos en ciencia, tecnología, IHA, TFC, economía e inteligencia aplicada con sustentabilidad. Gracias por su visita."
+    );
+    mensaje.lang = 'es-AR'; // o 'es-ES' si preferís español neutro
+    mensaje.rate = 1;
+    mensaje.pitch = 1;
+    mensaje.volume = 1;
+    speechSynthesis.speak(mensaje);
+  });
+</script>
 </body>
 </html>
