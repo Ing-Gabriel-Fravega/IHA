@@ -16,8 +16,7 @@
       color: #111;
       margin: 0;
       padding: 0;
-      transform: scale(0.8);
-      transform-origin: top center;
+      /* Se eliminó transform: scale(0.8) para permitir control dinámico */
     }
 
     header {
@@ -155,8 +154,8 @@
   <div class="zoom-control">
     <label for="zoom">Zoom:</label>
     <select id="zoom">
-      <option value="0.8" selected>80%</option>
-      <option value="1">100%</option>
+      <option value="0.8">80%</option>
+      <option value="1" selected>100%</option>
       <option value="1.2">120%</option>
     </select>
   </div>
