@@ -55,18 +55,10 @@
       background: linear-gradient(to right, #e9fce9, #ddf5dd);
     }
 
-    /* Centrar contenido de la columna derecha */
-    .right-column section {
-      text-align: center;
-    }
-
     video {
+      width: 100%;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      height: 460px;
-      width: auto;
-      display: block;
-      margin: 20px auto;
     }
 
     footer {
@@ -95,12 +87,12 @@
   <div class="container">
     <div class="left-column">
       <section class="sobre-mi">
-        <h2>Presentación</h2>
+        <h2>Sobre mí</h2>
         <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
       </section>
 
       <section class="documentos">
-        <h2>Bases sobre desarrollos tecnológicos disruptivos</h2>
+        <h2>Últimos documentos</h2>
         <ul>
           <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
         </ul>
@@ -111,9 +103,11 @@
     <div class="right-column">
       <section>
         <h2 style="text-align:center;">Estación Orbital</h2>
-        <video autoplay muted loop playsinline>
-          <source src="video-eorbital.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de video.
+       
+        <video autoplay muted loop playsinline width="360" style="float:right; margin: 20px;">
+  <source src="video-eorbital.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+      
         </video>
       </section>
     </div>
@@ -122,18 +116,17 @@
   <footer>
     <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
   </footer>
-
   <script>
   window.addEventListener('load', function () {
     const mensaje = new SpeechSynthesisUtterance(
       "Bienvenido al sitio web del ingeniero Gabriel Fravega. Aquí encontrará sus últimos desarrollos en ciencia, tecnología, IHA, TFC, economía e inteligencia aplicada con sustentabilidad. Gracias por su visita."
     );
-    mensaje.lang = 'es-AR';
+    mensaje.lang = 'es-AR'; // o 'es-ES' si preferís español neutro
     mensaje.rate = 1;
     mensaje.pitch = 1;
     mensaje.volume = 1;
     speechSynthesis.speak(mensaje);
   });
-  </script>
+</script>
 </body>
 </html>
