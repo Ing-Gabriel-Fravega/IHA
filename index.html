@@ -56,7 +56,6 @@
     }
 
     video {
-      width: 100%;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
@@ -104,10 +103,9 @@
       <section>
         <h2 style="text-align:center;">Estación Orbital</h2>
        
-        <video autoplay muted loop playsinline width="360" style="float:right; margin: 20px;">
-  <source src="video-eorbital.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de video.
-      
+        <video autoplay muted loop playsinline style="float:right; margin: 20px; height: 180px; width: auto;">
+          <source src="video-eorbital.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
         </video>
       </section>
     </div>
@@ -127,6 +125,6 @@
     mensaje.volume = 1;
     speechSynthesis.speak(mensaje);
   });
-</script>
+  </script>
 </body>
 </html>
