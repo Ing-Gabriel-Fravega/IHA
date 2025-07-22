@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página con Zoom</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página con Zoom</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      font-family: Arial, sans-serif;
-      zoom: 0.8; /* Valor inicial al 80% */
+      zoom: 0.8; /* Zoom inicial al 80% */
+      transition: zoom 0.3s ease;
     }
 
     #zoom-container {
       position: fixed;
       top: 10px;
       right: 10px;
-      background-color: #f1f1f1;
-      padding: 8px 12px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
       border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      padding: 8px 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
 
     #zoom-container label {
-      font-size: 14px;
       margin-right: 6px;
+      font-size: 14px;
     }
 
     #zoom {
       font-size: 14px;
-      padding: 4px;
     }
 
     h1 {
-      margin-top: 60px; /* espacio para que no tape el zoom */
+      margin-top: 80px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -49,20 +55,20 @@
     </select>
   </div>
 
-  <!-- Contenido de la página -->
+  <!-- Contenido principal -->
   <h1>Bienvenido a la página</h1>
-  <p>Este es un ejemplo de contenido. Usá el control de zoom para ajustar la escala de la página a tu preferencia.</p>
+  <p>Este es un ejemplo de página con control de zoom visual.</p>
+  <p>Podés ajustar el tamaño del contenido usando el menú de la esquina superior derecha.</p>
+  <p>Todo el contenido se escala suavemente con el valor de zoom elegido.</p>
 
-  <p>Podés seguir agregando más contenido debajo de esto. Todo se ajustará automáticamente según el zoom elegido.</p>
-
-  <!-- Script para el Zoom -->
+  <!-- Script -->
   <script>
     const zoomSelector = document.getElementById('zoom');
 
-    // Asignar valor inicial
+    // Establecer valor inicial
     zoomSelector.value = "0.8";
 
-    // Evento cuando cambia el zoom
+    // Manejar cambio de zoom
     zoomSelector.addEventListener('change', function () {
       document.body.style.zoom = this.value;
     });
