@@ -55,9 +55,18 @@
       background: linear-gradient(to right, #e9fce9, #ddf5dd);
     }
 
+    /* Centrar contenido de la columna derecha */
+    .right-column section {
+      text-align: center;
+    }
+
     video {
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      height: 460px;
+      width: auto;
+      display: block;
+      margin: 20px auto;
     }
 
     footer {
@@ -102,8 +111,7 @@
     <div class="right-column">
       <section>
         <h2 style="text-align:center;">Estación Orbital</h2>
-       
-        <video autoplay muted loop playsinline style="float:right; margin: 20px; height: 460px; width: auto;">
+        <video autoplay muted loop playsinline>
           <source src="video-eorbital.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de video.
         </video>
@@ -114,12 +122,13 @@
   <footer>
     <p>&copy; 2025 Gabriel Fravega. Todos los derechos reservados.</p>
   </footer>
+
   <script>
   window.addEventListener('load', function () {
     const mensaje = new SpeechSynthesisUtterance(
       "Bienvenido al sitio web del ingeniero Gabriel Fravega. Aquí encontrará sus últimos desarrollos en ciencia, tecnología, IHA, TFC, economía e inteligencia aplicada con sustentabilidad. Gracias por su visita."
     );
-    mensaje.lang = 'es-AR'; // o 'es-ES' si preferís español neutro
+    mensaje.lang = 'es-AR';
     mensaje.rate = 1;
     mensaje.pitch = 1;
     mensaje.volume = 1;
