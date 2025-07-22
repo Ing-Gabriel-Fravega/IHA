@@ -58,7 +58,7 @@
 
     section.documentos:hover {
       background-color: #c0f0c0;
-      cursor: pointer;
+      cursor: default;
     }
 
     .right-column section {
@@ -104,9 +104,12 @@
         <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
       </section>
 
-      <!-- 🔽 Este rectángulo redirige a segunda.html al pasar el mouse -->
-      <section class="documentos" id="rectangulo2" onmouseover="window.location.href='segunda.html'">
-        <h2>Bases sobre desarrollos tecnológicos disruptivos</h2>
+      <section class="documentos">
+        <h2>
+          <a href="pagina2.html" style="color: inherit; text-decoration: none; cursor: pointer;">
+            Bases sobre desarrollos tecnológicos disruptivos
+          </a>
+        </h2>
         <ul>
           <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
         </ul>
