@@ -2,76 +2,54 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Página con Zoom</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      zoom: 0.8; /* Zoom inicial al 80% */
-      transition: zoom 0.3s ease;
+      margin: 20px;
+      transform-origin: top left;
+      transition: transform 0.3s ease;
     }
 
-    #zoom-container {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background-color: #f9f9f9;
+    #zoomSelector {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .contenido {
+      padding: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      padding: 8px 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-    }
-
-    #zoom-container label {
-      margin-right: 6px;
-      font-size: 14px;
-    }
-
-    #zoom {
-      font-size: 14px;
-    }
-
-    h1 {
-      margin-top: 80px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <!-- Selector de Zoom -->
-  <div id="zoom-container">
-    <label for="zoom">Zoom:</label>
-    <select id="zoom">
-      <option value="0.8">80%</option>
-      <option value="1.0">100%</option>
-      <option value="1.2">120%</option>
-    </select>
+  <label for="zoomSelector">Elija el Zoom: </label>
+  <select id="zoomSelector">
+    <option value="0.8">80%</option>
+    <option value="1" selected>100%</option>
+    <option value="1.2">120%</option>
+  </select>
+
+  <div class="contenido">
+    <h1>Bienvenido a la página</h1>
+    <p>Este es el contenido principal de tu página.</p>
+    <p>Podés cambiar el nivel de zoom usando el selector de arriba.</p>
   </div>
 
-  <!-- Contenido principal -->
-  <h1>Bienvenido a la página</h1>
-  <p>Este es un ejemplo de página con control de zoom visual.</p>
-  <p>Podés ajustar el tamaño del contenido usando el menú de la esquina superior derecha.</p>
-  <p>Todo el contenido se escala suavemente con el valor de zoom elegido.</p>
-
-  <!-- Script -->
   <script>
-    const zoomSelector = document.getElementById('zoom');
-
-    // Establecer valor inicial
-    zoomSelector.value = "0.8";
-
-    // Manejar cambio de zoom
+    const zoomSelector = document.getElementById('zoomSelector');
     zoomSelector.addEventListener('change', function () {
-      document.body.style.zoom = this.value;
+      const zoomValue = parseFloat(this.value);
+      document.body.style.transform = scale(${zoomValue});
     });
+
+    // Establecer zoom inicial
+    document.body.style.transform = 'scale(0.8)';
+    zoomSelector.value = '0.8';
   </script>
 </body>
 </html>
