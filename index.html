@@ -45,6 +45,7 @@
       border-radius: 14px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       margin-bottom: 20px;
+      transition: background-color 0.3s ease;
     }
 
     section.sobre-mi {
@@ -55,7 +56,11 @@
       background: linear-gradient(to right, #e9fce9, #ddf5dd);
     }
 
-    /* Centrar contenido de la columna derecha */
+    section.documentos:hover {
+      background-color: #c0f0c0;
+      cursor: pointer;
+    }
+
     .right-column section {
       text-align: center;
     }
@@ -99,7 +104,8 @@
         <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
       </section>
 
-      <section class="documentos">
+      <!-- 🔽 Este rectángulo redirige a segunda.html al pasar el mouse -->
+      <section class="documentos" id="rectangulo2" onmouseover="window.location.href='segunda.html'">
         <h2>Bases sobre desarrollos tecnológicos disruptivos</h2>
         <ul>
           <li><a href="#">PRESENTACIÓN PROFESIONAL - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO®</a></li>
