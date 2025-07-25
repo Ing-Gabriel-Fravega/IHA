@@ -21,7 +21,7 @@
     }
 
     .tech-image {
-      width: 60%;
+      width: 98vw;
       max-width: 1200px;
       height: auto;
       border-radius: 20px;
@@ -31,11 +31,10 @@
         0 0 120px rgba(0, 242, 255, 0.2);
       transition: all 0.5s ease-in-out;
       filter: drop-shadow(0 0 30px #00f2ff);
-      cursor: pointer;
     }
 
     .tech-image:hover {
-      transform: scale(1.1);
+      transform: scale(1.07);
       filter: drop-shadow(0 0 60px #00f2ff) brightness(1.2);
       box-shadow:
         0 0 60px rgba(0, 255, 255, 0.8),
@@ -48,29 +47,34 @@
     }
 
     video {
-      width: 45%; /* reducido del 60% */
+      width: 45%;
       height: auto;
+      max-height: 40vh;
       border-radius: 20px;
       box-shadow:
         0 0 20px rgba(0, 255, 255, 0.6),
         0 0 40px rgba(0, 255, 255, 0.4),
         0 0 60px rgba(0, 255, 255, 0.2);
+      outline: none;
     }
 
     @media (max-width: 600px) {
       .tech-image,
       video {
-        width: 90%;
+        width: 98vw;
+        max-width: none;
+        max-height: none;
       }
     }
   </style>
 </head>
-<body onload="hablar()">
-
+<body>
   <h1>Página 2</h1>
 
+  <!-- Imagen principal -->
   <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
 
+  <!-- Video insertado debajo -->
   <div class="video-container">
     <video controls>
       <source src="video_pagina_2.mp4" type="video/mp4" />
@@ -78,18 +82,14 @@
     </video>
   </div>
 
+  <!-- Texto hablado automático -->
   <script>
-    function hablar() {
-      const mensaje = new SpeechSynthesisUtterance(
-        "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
-      );
-      mensaje.lang = 'es-ES';
-      mensaje.rate = 0.9;
-      mensaje.pitch = 1.2;
-      mensaje.volume = 1;
-      speechSynthesis.speak(mensaje);
-    }
-  </script>
+    window.addEventListener('load', () => {
+      const synth = window.speechSynthesis;
+      let voices = [];
 
-</body>
-</html>
+      function speak() {
+        const utterance = new SpeechSynthesisUtterance(
+          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
+        );
+        utterance.lang = 'es-ES';
