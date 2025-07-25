@@ -2,92 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Página 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página 2 - Gabriel Frávega</title>
   <style>
     body {
-      background-color: black;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f0f8ff;
+      color: #000;
       text-align: center;
-      padding: 2em;
     }
-
     h1 {
-      font-size: 2.5em;
-      color: #00ffff;
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      color: #005577;
     }
-
-    .imagen-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 255, 0.3);
     }
-
-    .imagen-impacto {
-      width: 600px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    video {
+      margin-top: 40px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    }
-
-    .imagen-impacto:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.6);
-      cursor: pointer;
-    }
-
-    .futura-formula {
-      margin-top: 40px;
-      font-size: 1.5em;
-      font-style: italic;
-      color: #ffccff;
-      text-shadow: 0 0 5px #f0f;
-    }
-
-    .video-container {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
-    }
-
-    video {
-      width: 80%;
-      max-width: 800px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+      max-width: 100%;
     }
   </style>
 </head>
-<body onload="hablar()">
-  <h1>El inicio de la convergencia definitiva</h1>
-  
-  <div class="imagen-container">
-    <img src="Imagen2.png" alt="Impacto visual" class="imagen-impacto"/>
-  </div>
+<body>
+  <h1>Página 2 - Avance del Proyecto</h1>
 
-  <div class="futura-formula">
-    … como si E = m.c² encontrara su espejo digital: IAH®.TFC® = ?
-  </div>
+  <p>En esta sección se presenta una imagen significativa del desarrollo actual del proyecto:</p>
 
-  <div class="video-container">
-    <video controls autoplay muted>
-      <source src="vídeo página 2.mp4" type="video/mp4">
-      Tu navegador no soporta la etiqueta de video.
-    </video>
-  </div>
+  <img src="imagen2.jpg" alt="Imagen del Proyecto - Página 2" />
 
-  <script>
-    function hablar() {
-      const mensaje = new SpeechSynthesisUtterance("Has ingresado al núcleo del desarrollo. Aquí nace la fórmula de la inteligencia.");
-      mensaje.lang = "es-ES";
-      mensaje.pitch = 1.4;
-      mensaje.rate = 0.95;
-      mensaje.voice = speechSynthesis.getVoices().find(voice => voice.name.includes("Google") && voice.name.includes("femenina")) || speechSynthesis.getVoices()[0];
-      speechSynthesis.speak(mensaje);
-    }
-  </script>
+  <p>A continuación, un video destacado que explica visualmente una parte fundamental del avance:</p>
+
+  <video controls autoplay muted loop>
+    <source src="vídeo página 2.mp4" type="video/mp4" />
+    Tu navegador no soporta el elemento de video.
+  </video>
+
 </body>
 </html>
