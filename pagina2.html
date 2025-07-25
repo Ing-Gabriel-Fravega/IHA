@@ -21,8 +21,8 @@
     }
 
     .tech-image {
-      width: 98vw; /* casi todo el ancho del viewport */
-      max-width: 1200px; /* tamaño máximo grande */
+      width: 60%; /* ajustado para que no sea tan grande */
+      max-width: 1200px;
       height: auto;
       border-radius: 20px;
       box-shadow: 
@@ -31,10 +31,11 @@
         0 0 120px rgba(0, 242, 255, 0.2);
       transition: all 0.5s ease-in-out;
       filter: drop-shadow(0 0 30px #00f2ff);
+      cursor: pointer;
     }
 
     .tech-image:hover {
-      transform: scale(1.07);
+      transform: scale(1.1);
       filter: drop-shadow(0 0 60px #00f2ff) brightness(1.2);
       box-shadow:
         0 0 60px rgba(0, 255, 255, 0.8),
@@ -42,57 +43,53 @@
         0 0 180px rgba(0, 255, 255, 0.4);
     }
 
+    .video-container {
+      margin-top: 3rem;
+    }
+
+    video {
+      width: 60%; /* tamaño controlado */
+      height: auto;
+      border-radius: 20px;
+      box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 0 40px rgba(0, 255, 255, 0.4),
+        0 0 60px rgba(0, 255, 255, 0.2);
+    }
+
     @media (max-width: 600px) {
-      .tech-image {
-        width: 98vw;
-        max-width: none;
+      .tech-image,
+      video {
+        width: 90%;
       }
     }
   </style>
 </head>
-<body>
+<body onload="hablar()">
+
   <h1>Página 2</h1>
+
   <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
 
+  <div class="video-container">
+    <video controls>
+      <source src="video_pagina_2.mp4" type="video/mp4" />
+      Tu navegador no admite la reproducción de video.
+    </video>
+  </div>
+
   <script>
-    window.addEventListener('load', () => {
-      const synth = window.speechSynthesis;
-      let voices = [];
-
-      function speak() {
-        const utterance = new SpeechSynthesisUtterance(
-          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
-        );
-        utterance.lang = 'es-ES';  // español de España, puede cambiar según la voz
-        utterance.rate = 0.9;      // un poco más lento
-        utterance.pitch = 1.2;     // tono más agudo (más femenino)
-        utterance.volume = 1;
-
-        // Busca una voz femenina
-        const femaleVoices = voices.filter(voice =>
-          voice.lang.startsWith('es') && voice.gender !== 'male'
-        );
-
-        if(femaleVoices.length > 0) {
-          utterance.voice = femaleVoices[0];
-        } else if(voices.length > 0) {
-          utterance.voice = voices[0];
-        }
-
-        synth.speak(utterance);
-      }
-
-      function loadVoices() {
-        voices = synth.getVoices();
-        if (voices.length !== 0) {
-          speak();
-        }
-      }
-
-      synth.onvoiceschanged = loadVoices;
-      loadVoices();
-    });
+    function hablar() {
+      const mensaje = new SpeechSynthesisUtterance(
+        "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
+      );
+      mensaje.lang = 'es-ES';
+      mensaje.rate = 0.9;
+      mensaje.pitch = 1.2;
+      mensaje.volume = 1;
+      speechSynthesis.speak(mensaje);
+    }
   </script>
+
 </body>
 </html>
-
