@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página 2</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 2em;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #00ffff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    .imagen-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .imagen-impacto {
+      width: 600px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .imagen-impacto:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.6);
+      cursor: pointer;
+    }
+
+    .futura-formula {
+      margin-top: 40px;
+      font-size: 1.5em;
+      font-style: italic;
+      color: #ffccff;
+      text-shadow: 0 0 5px #f0f;
+    }
+  </style>
+</head>
+<body onload="hablar()">
+  <h1>El inicio de la convergencia definitiva</h1>
+  
+  <div class="imagen-container">
+    <img src="Imagen2.png" alt="Impacto visual" class="imagen-impacto"/>
+  </div>
+
+  <div class="futura-formula">
+    … como si E = m.c² encontrara su espejo digital: IAH®.TFC® = ?
+  </div>
+
+  <script>
+    function hablar() {
+      const mensaje = new SpeechSynthesisUtterance("Has ingresado al núcleo del desarrollo. Aquí nace la fórmula de la inteligencia.");
+      mensaje.lang = "es-ES";
+      mensaje.pitch = 1.4;
+      mensaje.rate = 0.95;
+      mensaje.voice = speechSynthesis.getVoices().find(voice => voice.name.includes("Google") && voice.name.includes("femenina")) || speechSynthesis.getVoices()[0];
+      speechSynthesis.speak(mensaje);
+    }
+  </script>
+</body>
+</html>
