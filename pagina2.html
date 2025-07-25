@@ -3,64 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página 2 con Video</title>
+  <title>Página 2</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 20px;
-      background-color: #f0f0f0;
+      padding: 2rem;
       text-align: center;
     }
 
-    .contenido {
-      max-width: 900px;
-      margin: 0 auto;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 20px #00f2ff;
     }
 
-    .titulo {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .imagenes {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .imagenes img {
-      width: 150px;
+    .tech-image {
+      width: 98vw; /* casi todo el ancho del viewport */
+      max-width: 1200px; /* tamaño máximo grande */
       height: auto;
-      border-radius: 10px;
+      border-radius: 20px;
+      box-shadow: 
+        0 0 40px rgba(0, 242, 255, 0.6), 
+        0 0 80px rgba(0, 242, 255, 0.4), 
+        0 0 120px rgba(0, 242, 255, 0.2);
+      transition: all 0.5s ease-in-out;
+      filter: drop-shadow(0 0 30px #00f2ff);
     }
 
-    video {
-      width: 33%; /* un tercio de la pantalla */
-      height: auto;
-      border: 2px solid #555;
-      border-radius: 8px;
-      margin-top: 20px;
+    .tech-image:hover {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 60px #00f2ff) brightness(1.2);
+      box-shadow:
+        0 0 60px rgba(0, 255, 255, 0.8),
+        0 0 120px rgba(0, 255, 255, 0.6),
+        0 0 180px rgba(0, 255, 255, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .tech-image {
+        width: 98vw;
+        max-width: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="contenido">
-    <div class="titulo">Fórmula General de la Segunda Página</div>
+  <h1>Página 2</h1>
+  <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
 
-    <div class="imagenes">
-      <img src="imagen1.jpg" alt="Imagen 1">
-      <img src="imagen2.jpg" alt="Imagen 2">
-      <img src="imagen3.jpg" alt="Imagen 3">
-      <img src="imagen4.jpg" alt="Imagen 4">
-    </div>
+  <script>
+    window.addEventListener('load', () => {
+      const synth = window.speechSynthesis;
+      let voices = [];
 
-    <video controls>
-      <source src="vídeo página 2.mp4" type="video/mp4">
-      Tu navegador no soporta este formato.
-    </video>
-  </div>
+      function speak() {
+        const utterance = new SpeechSynthesisUtterance(
+          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
+        );
+        utterance.lang = 'es-ES';  // español de España, puede cambiar según la voz
+        utterance.rate = 0.9;      // un poco más lento
+        utterance.pitch = 1.2;     // tono más agudo (más femenino)
+        utterance.volume = 1;
+
+        // Busca una voz femenina
+        const femaleVoices = voices.filter(voice =>
+          voice.lang.startsWith('es') && voice.gender !== 'male'
+        );
+
+        if(femaleVoices.length > 0) {
+          utterance.voice = femaleVoices[0];
+        } else if(voices.length > 0) {
+          utterance.voice = voices[0];
+        }
+
+        synth.speak(utterance);
+      }
+
+      function loadVoices() {
+        voices = synth.getVoices();
+        if (voices.length !== 0) {
+          speak();
+        }
+      }
+
+      synth.onvoiceschanged = loadVoices;
+      loadVoices();
+    });
+  </script>
 </body>
 </html>
+
