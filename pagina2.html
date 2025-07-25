@@ -2,121 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Página 2</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header, footer {
+      background-color: #222;
+      color: #fff;
+      padding: 1em;
       text-align: center;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 20px #00f2ff;
+    main {
+      padding: 1em;
+      max-width: 900px;
+      margin: auto;
     }
-
-    .tech-image {
-      width: 98vw;
-      max-width: 1200px;
+    .cuatro-fotos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .cuatro-fotos img {
+      width: 100%;
       height: auto;
-      border-radius: 20px;
-      box-shadow: 
-        0 0 40px rgba(0, 242, 255, 0.6), 
-        0 0 80px rgba(0, 242, 255, 0.4), 
-        0 0 120px rgba(0, 242, 255, 0.2);
-      transition: all 0.5s ease-in-out;
-      filter: drop-shadow(0 0 30px #00f2ff);
+      border-radius: 8px;
     }
-
-    .tech-image:hover {
-      transform: scale(1.07);
-      filter: drop-shadow(0 0 60px #00f2ff) brightness(1.2);
-      box-shadow:
-        0 0 60px rgba(0, 255, 255, 0.8),
-        0 0 120px rgba(0, 255, 255, 0.6),
-        0 0 180px rgba(0, 255, 255, 0.4);
+    .texto {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      line-height: 1.5em;
     }
-
     .video-container {
-      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
     }
-
     video {
-      width: 98vw;
-      max-width: 1000px;
-      border-radius: 20px;
-      box-shadow:
-        0 0 20px rgba(0, 255, 255, 0.6),
-        0 0 40px rgba(0, 255, 255, 0.4),
-        0 0 60px rgba(0, 255, 255, 0.2);
-    }
-
-    @media (max-width: 600px) {
-      .tech-image,
-      video {
-        width: 98vw;
-        max-width: none;
-      }
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <h1>Página 2</h1>
 
-  <!-- Imagen principal -->
-  <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
+<header>
+  <h1>Página 2 - Proyecto</h1>
+</header>
 
-  <!-- Video insertado debajo -->
-  <div class="video-container">
-    <video controls>
-      <source src="vídeo página 2.mp4" type="video/mp4" />
-      Tu navegador no admite la reproducción de video.
-    </video>
+<main>
+  <section class="cuatro-fotos">
+    <img src="foto1.jpg" alt="Foto 1" />
+    <img src="foto2.jpg" alt="Foto 2" />
+    <img src="foto3.jpg" alt="Foto 3" />
+    <img src="foto4.jpg" alt="Foto 4" />
+  </section>
+
+  <div class="texto">
+    <p>Este conjunto de imágenes representa los avances en el desarrollo del sistema de interacción biomolecular. A continuación, se muestra un vídeo que resume visualmente los resultados experimentales obtenidos hasta el momento.</p>
   </div>
 
-  <!-- Texto hablado automático -->
-  <script>
-    window.addEventListener('load', () => {
-      const synth = window.speechSynthesis;
-      let voices = [];
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="video_pagina_2.mp4" type="video/mp4" />
+      Tu navegador no soporta la reproducción de vídeo.
+    </video>
+  </div>
+</main>
 
-      function speak() {
-        const utterance = new SpeechSynthesisUtterance(
-          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
-        );
-        utterance.lang = 'es-ES';
-        utterance.rate = 0.9;
-        utterance.pitch = 1.2;
-        utterance.volume = 1;
+<footer>
+  <p>&copy; 2025 Gabriel Fravega - Proyecto IHA</p>
+</footer>
 
-        const femaleVoices = voices.filter(voice =>
-          voice.lang.startsWith('es') && voice.gender !== 'male'
-        );
-
-        if(femaleVoices.length > 0) {
-          utterance.voice = femaleVoices[0];
-        } else if(voices.length > 0) {
-          utterance.voice = voices[0];
-        }
-
-        synth.speak(utterance);
-      }
-
-      function loadVoices() {
-        voices = synth.getVoices();
-        if (voices.length !== 0) {
-          speak();
-        }
-      }
-
-      synth.onvoiceschanged = loadVoices;
-      loadVoices();
-    });
-  </script>
 </body>
 </html>
