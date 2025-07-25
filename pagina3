@@ -24,3 +24,75 @@
       width: 98vw; /* casi todo el ancho del viewport */
       max-width: 1200px; /* tamaño máximo grande */
       height: auto;
+      border-radius: 20px;
+      box-shadow: 
+        0 0 40px rgba(0, 242, 255, 0.6), 
+        0 0 80px rgba(0, 242, 255, 0.4), 
+        0 0 120px rgba(0, 242, 255, 0.2);
+      transition: all 0.5s ease-in-out;
+      filter: drop-shadow(0 0 30px #00f2ff);
+    }
+
+    .tech-image:hover {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 60px #00f2ff) brightness(1.2);
+      box-shadow:
+        0 0 60px rgba(0, 255, 255, 0.8),
+        0 0 120px rgba(0, 255, 255, 0.6),
+        0 0 180px rgba(0, 255, 255, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .tech-image {
+        width: 98vw;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Página 2</h1>
+  <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
+
+  <script>
+    window.addEventListener('load', () => {
+      const synth = window.speechSynthesis;
+      let voices = [];
+
+      function speak() {
+        const utterance = new SpeechSynthesisUtterance(
+          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
+        );
+        utterance.lang = 'es-ES';  // español de España, puede cambiar según la voz
+        utterance.rate = 0.9;      // un poco más lento
+        utterance.pitch = 1.2;     // tono más agudo (más femenino)
+        utterance.volume = 1;
+
+        // Busca una voz femenina
+        const femaleVoices = voices.filter(voice =>
+          voice.lang.startsWith('es') && voice.gender !== 'male'
+        );
+
+        if(femaleVoices.length > 0) {
+          utterance.voice = femaleVoices[0];
+        } else if(voices.length > 0) {
+          utterance.voice = voices[0];
+        }
+
+        synth.speak(utterance);
+      }
+
+      function loadVoices() {
+        voices = synth.getVoices();
+        if (voices.length !== 0) {
+          speak();
+        }
+      }
+
+      synth.onvoiceschanged = loadVoices;
+      loadVoices();
+    });
+  </script>
+</body>
+</html>
+
