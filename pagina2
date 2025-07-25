@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página 2</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
 
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 20px #00f2ff;
+    }
+
+    .tech-image {
+      width: 98vw; /* casi todo el ancho del viewport */
+      max-width: 1200px; /* tamaño máximo grande */
+      height: auto;
