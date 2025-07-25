@@ -25,7 +25,7 @@
     }
 
     .main-content {
-      max-width: 1300px;
+      max-width: 1200px;
       margin: 40px auto;
       padding: 30px;
       background-color: #ffffff;
@@ -35,21 +35,22 @@
 
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
       padding: 20px;
     }
 
     .image-grid img {
       width: 100%;
-      height: auto;
+      height: 360px; /* AUMENTAMOS ALTURA */
+      object-fit: cover;
       border-radius: 14px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .image-grid img:hover {
-      transform: scale(1.15) rotate(1deg);
+      transform: scale(1.1);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
