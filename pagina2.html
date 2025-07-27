@@ -12,6 +12,18 @@
       margin: 0;
       padding: 2rem;
       text-align: center;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
 
     h1 {
@@ -28,16 +40,18 @@
     }
 
     .tech-image {
-      width: 80vw;
-      max-width: 1200px;
+      width: 100%;
+      max-width: 800px;
       height: auto;
       border-radius: 20px;
-      box-shadow: 
-        0 0 40px rgba(0, 242, 255, 0.6), 
-        0 0 80px rgba(0, 242, 255, 0.4), 
+      box-shadow:
+        0 0 40px rgba(0, 242, 255, 0.6),
+        0 0 80px rgba(0, 242, 255, 0.4),
         0 0 120px rgba(0, 242, 255, 0.2);
       transition: all 0.5s ease-in-out;
       filter: drop-shadow(0 0 30px #00f2ff);
+      display: block;
+      margin: 0 auto;
     }
 
     .tech-image:hover {
@@ -51,11 +65,15 @@
 
     .video-container {
       margin-top: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
     }
 
     video {
-      width: 80vw;
-      max-width: 600px;
+      width: 100%;
+      max-width: 100%;
       height: auto;
       max-height: 40vh;
       border-radius: 20px;
@@ -69,10 +87,17 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
       .tech-image,
       video {
-        width: 98vw;
-        max-width: none;
+        max-width: 100%;
+        width: 100%;
         max-height: none;
       }
     }
@@ -83,15 +108,17 @@
   <p>
     Estamos rompiendo el paradigma del futuro de la tecnología, que adoptó a la IA, avanzamos hacia una inteligencia 100% superior: IHA®, que sostiene al ser humano liderando el futuro; El ETMBS® contiene como pensamiento inteligente a la IHA® que supervisará y controlará a la IA, a la IHAA® y al EECSII®, que mantendrá el absoluto control, seguridad, integral y la integridad de los Ecosistemas de un proyecto tecnológicos, abriendo las puertas a un futuro inimaginable. La integridad de las naciones y el ecosistemas de los humanos no podrá ser modificado por el EMBS® ni por el EECSII® de ningún proyecto tecnológico. La libertad humana y colectiva de las naciones se mantendrá intacta por filosofía propia de estos sistemas en su concepción y carecerán absolutamente de rutinas ideológicas; No podrán fomentar ni monopolios, ni ogligopolios, en el comercio internacional, ni tener fines militares de ningún tipo. El sistema en sí mismo, es abierto, distribuido, no centralizado y con aplicación en proyectos de cualquier índoles, para quienes decidan llevar adelanto cualquier proyecto con objetivos futuristas, pero respetando siempre al ecosistema humano, las culturas y diversidades del planeta.Sin intervenir en mercados económicos centralizados y respetará la libertad de las culturas y pensamientos de las naciones del mundo. Es solo una herramienta técnica para aportar progreso y bienestar a la humanidad, carece absolutamente de fundamentalismos, ideologías, religiones y cualquier objetivo que vaya más allá del un aporte positivo a la humanidad y quienes lo habitan.
   </p>
-  <!-- Imagen principal -->
-  <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
+  <div class="container">
+    <!-- Imagen principal -->
+    <img src="Imagen2.png" alt="Imagen Tecnológica" class="tech-image" />
 
-  <!-- Video insertado debajo -->
-  <div class="video-container">
-    <video controls>
-      <source src="video_pagina_2.mp4" type="video/mp4" />
-      Tu navegador no admite la reproducción de video.
-    </video>
+    <!-- Video insertado debajo -->
+    <div class="video-container">
+      <video controls>
+        <source src="video_pagina_2.mp4" type="video/mp4" />
+        Tu navegador no admite la reproducción de video.
+      </video>
+    </div>
   </div>
 
   <!-- Texto hablado automático -->
@@ -113,5 +140,4 @@
   </script>
 </body>
 </html>
-
 
