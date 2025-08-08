@@ -29,19 +29,11 @@
       margin: 0.2em 0;
     }
 
+    /* Contenedor en una sola columna */
     .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      gap: 20px;
-    }
-
-    .left-column, .right-column {
-      flex: 1;
-      min-width: 300px;
     }
 
     section {
@@ -66,15 +58,15 @@
       cursor: default;
     }
 
-    .right-column section {
+    section h2 {
       text-align: center;
     }
 
     video {
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      height: 460px;
-      width: auto;
+      width: 100%;
+      height: auto;
       display: block;
       margin: 20px auto;
     }
@@ -95,22 +87,13 @@
       text-decoration: underline;
     }
 
-    .firma-img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .tech-image {
+    .firma-img, .tech-image {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 20px auto;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     p {
@@ -131,44 +114,41 @@
   </header>
 
   <div class="container">
-    <div class="left-column">
-      <section class="sobre-mi">
-        <h2>Presentación</h2>
-        <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
-      </section>
 
-      <section class="documentos">
-        <h2>
-          <a href="pagina2.html" style="color: inherit; text-decoration: none; cursor: pointer;">
-            Bases sobre desarrollos tecnológicos disruptivos: Página 2 - IHA®    
-            -----> click con el mouse
-          </a>
-        </h2>
-        <ul>
-          <li><a href="#">PRESENTACIÓN PROFESIONAL: ETMBS®: ECOSISTEMA TECNOLÓGICO MECATRÓNICO-BIÓNICO SUSTENTABLE® - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO® - IHAA®: EECSII® ECOSISTEMA ENCRIPTADO CON CIBERSEGURIDAD, INTEGRAL E INTEGRADO; La IA actuará como motor, resuelve, desarrolla, construye un proyecto tecnológico y la IHAA® pone en operación y mantenimiento, el proyecto construído; El ETMBS®, controlado por la IHA® mantendrá el sistema humano. con sus actividades en el marco de un ecosistema sustentable social y económico, sin perjuicio de la actividad humana del planeta, pero bajo condiciones altamente futuristas que irán siendo redefinidas exclusivamente por la propia humanidad. Es disruptivo con respecto al diseño y paradigmas de los proyectos sobre superinteligencias concentradas, especialmente en activos digitales que degradarán el equilibrio de las naciones del planeta.</a></li>
-        </ul>
-        <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" class="firma-img">
-      </section>
-    </div>
+    <section class="sobre-mi">
+      <h2>Presentación</h2>
+      <p>Este sitio está dedicado a la publicación de mis trabajos en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
+    </section>
 
-    <div class="right-column">
-      <section>
-        <h2 style="text-align:center;">Estación Orbital</h2>
-        <video autoplay muted loop playsinline>
-          <source src="video-eorbital.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de video.
-        </video>
-      </section>
-    </div>
+    <section>
+      <h2 style="text-align:center;">Estación Orbital</h2>
+      <video autoplay muted loop playsinline>
+        <source src="video-eorbital.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </section>
+
+    <section class="documentos">
+      <h2>
+        <a href="pagina2.html" style="color: inherit; text-decoration: none; cursor: pointer;">
+          Bases sobre desarrollos tecnológicos disruptivos: Página 2 - IHA® -----> click con el mouse
+        </a>
+      </h2>
+      <ul>
+        <li><a href="#">PRESENTACIÓN PROFESIONAL: ETMBS®: ECOSISTEMA TECNOLÓGICO MECATRÓNICO-BIÓNICO SUSTENTABLE® - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO® - IHAA®: EECSII® ECOSISTEMA ENCRIPTADO CON CIBERSEGURIDAD, INTEGRAL E INTEGRADO; La IA actuará como motor, resuelve, desarrolla, construye un proyecto tecnológico y la IHAA® pone en operación y mantenimiento, el proyecto construído; El ETMBS®, controlado por la IHA® mantendrá el sistema humano. con sus actividades en el marco de un ecosistema sustentable social y económico, sin perjuicio de la actividad humana del planeta, pero bajo condiciones altamente futuristas que irán siendo redefinidas exclusivamente por la propia humanidad. Es disruptivo con respecto al diseño y paradigmas de los proyectos sobre superinteligencias concentradas, especialmente en activos digitales que degradarán el equilibrio de las naciones del planeta.</a></li>
+      </ul>
+      <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" class="firma-img">
+    </section>
+
   </div>
 
   <footer>
     <p>&copy; 2025 Gabriel Frávega. Todos los derechos reservados®.
-Toda la información, desarrollos, modelos, algoritmos, diseños y documentos relacionados con proyectos tecnológicos y motores avanzados desarrollados por el Ing. Gabriel Frávega (Universidad Nacional de Córdoba) son propiedad exclusiva de su autor y están protegidos por leyes de propiedad intelectual vigentes.
-Queda expresamente prohibida la reproducción, distribución, divulgación o uso de esta información sin la autorización expresa y por escrito del titular de los derechos. Cualquier uso no autorizado podrá ser objeto de acciones legales conforme a la legislación aplicable.
-Este aviso tiene como objetivo informar públicamente sobre la titularidad y protección de los derechos, promoviendo el respeto y reconocimiento de la propiedad intelectual.
-Este texto explícita la titularidad y la prohibición de uso sin permiso, pero no establece obligaciones contractuales ni acuerdos de confidencialidad específicos, que sí se reservan para documentos privados como un NDA.
- </p>
+    Toda la información, desarrollos, modelos, algoritmos, diseños y documentos relacionados con proyectos tecnológicos y motores avanzados desarrollados por el Ing. Gabriel Frávega (Universidad Nacional de Córdoba) son propiedad exclusiva de su autor y están protegidos por leyes de propiedad intelectual vigentes.
+    Queda expresamente prohibida la reproducción, distribución, divulgación o uso de esta información sin la autorización expresa y por escrito del titular de los derechos. Cualquier uso no autorizado podrá ser objeto de acciones legales conforme a la legislación aplicable.
+    Este aviso tiene como objetivo informar públicamente sobre la titularidad y protección de los derechos, promoviendo el respeto y reconocimiento de la propiedad intelectual.
+    Este texto explícita la titularidad y la prohibición de uso sin permiso, pero no establece obligaciones contractuales ni acuerdos de confidencialidad específicos, que sí se reservan para documentos privados como un NDA.
+    </p>
   </footer>
 
   <script>
