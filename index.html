@@ -18,17 +18,14 @@
       margin: 0;
       padding: 0;
     }
-
     header {
       text-align: center;
       padding: 20px 10px 10px;
     }
-
     h1 {
       font-size: 2em;
       margin: 0.2em 0;
     }
-
     .container {
       max-width: 1200px;
       width: 100vw;
@@ -36,7 +33,6 @@
       padding: 20px;
       box-sizing: border-box;
     }
-
     section {
       background-color: #ffffff;
       padding: 20px;
@@ -45,59 +41,132 @@
       margin-bottom: 20px;
       transition: background-color 0.3s ease;
     }
-
     section.sobre-mi {
       background: linear-gradient(to right, #f0f8ff, #e6f0ff);
     }
-
     section.documentos {
       background: linear-gradient(to right, #e9fce9, #ddf5dd);
     }
-
     section.documentos:hover {
       background-color: #c0f0c0;
       cursor: default;
     }
-
     section h2 {
       text-align: center;
     }
-
     .tech-image {
-      max-width: 100%;
+      max-width: 100vw;
+      width: 100%;
       height: auto;
       display: block;
       margin: 20px auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      box-sizing: border-box;
     }
-
     video {
-      max-width: 100%;
+      max-width: 100vw;
+      width: 100%;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
       display: block;
       margin: 20px auto;
-      box-sizing: border-box;
     }
-
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.6em;
       color: #555;
     }
-
     a {
       color: #0044cc;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     .firma-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    p {
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gabriel Frávega</h1>
+    <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA® (2024/2025)</p>
+    <h1>INTELIGENCIA HUMANA APLICADA: IHA®</h1>
+    <p>MOTOR TECNOLÓGICO</p>
+    <img src="IH03.png" alt="IH03" class="tech-image" />
+  </header>
 
+  <div class="container">
+
+    <section class="sobre-mi">
+      <h2>Presentación</h2>
+      <p>Este sitio está dedicado a la publicación de mis trabajos y desarrollos, en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
+    </section>
+
+    <section>
+      <h2>Estación Orbital</h2>
+      <video autoplay muted loop playsinline>
+        <source src="video-eorbital.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </section>
+
+    <section class="documentos">
+      <h2>
+        <a href="pagina2.html" style="color: inherit; text-decoration: none;">
+          Bases sobre desarrollos tecnológicos disruptivos: Página 2 - IHA® -----> click con el mouse
+        </a>
+      </h2>
+
+      <p><strong>PRESENTACIÓN PROFESIONAL:</strong> ETMBS®: ECOSISTEMA TECNOLÓGICO MECATRÓNICO-BIÓNICO SUSTENTABLE® - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO® - IHAA®: EECSII® ECOSISTEMA ENCRIPTADO CON CIBERSEGURIDAD, INTEGRAL E INTEGRADO...</p>
+
+      <h3>Resumen de Validaciones Técnicas Destacadas</h3>
+      <ol>
+        <li><strong>Validación Conceptual del Teorema de la Frontera del Conocimiento (TFC®):</strong> Confirmación exhaustiva de la coherencia lógica y científica...</li>
+        <li><strong>Evaluación Integral del Ecosistema de Seguridad TFC®:</strong> Análisis profundo de la arquitectura de ciberseguridad...</li>
+        <li><strong>Innovación en Energías de Alto Rendimiento:</strong> Validación del uso sustentable de energía plasmática y pilas atómicas...</li>
+        <li><strong>Revisión y Calificación de Proyectos Tecnológicos:</strong> Evaluación de más de 70 iniciativas innovadoras...</li>
+        <li><strong>Benchmarking y Convergencia con Tendencias Globales:</strong> Identificación de sinergias clave con avances tecnológicos internacionales...</li>
+        <li><strong>Análisis Generativo de Impacto Tecnológico:</strong> Valoración cualitativa del impacto transformador de IHA®...</li>
+      </ol>
+
+      <p><strong>Garantía de Calidad y Liderazgo Tecnológico:</strong> Estas validaciones, soportadas por la inteligencia artificial generativa de ChatGPT, confirman que IHA® posee una base teórica robusta y respaldo técnico probado...</p>
+
+      <img src="IHA04.png" alt="IHA04" class="tech-image" />
+      <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" class="firma-img">
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Gabriel Frávega. Todos los derechos reservados®... (texto legal completo)</p>
+  </footer>
+
+  <script>
+  window.addEventListener('load', function () {
+    const mensaje = new SpeechSynthesisUtterance(
+      "Bienvenido al sitio web del ingeniero Gabriel Frávega. Aquí encontrará sus últimos desarrollos en ciencia, tecnología, IHA®, TFC®, economía e inteligencia aplicada con sustentabilidad. Gracias por su visita."
+    );
+    mensaje.lang = 'es-AR';
+    mensaje.rate = 1;
+    mensaje.pitch = 1;
+    mensaje.volume = 1;
+    speechSynthesis.speak(mensaje);
+  });
+  </script>
+</body>
+</html>
