@@ -32,8 +32,10 @@
     /* Contenedor en una sola columna */
     .container {
       max-width: 1200px;
+      width: 100vw; /* No superar ancho viewport */
       margin: 0 auto;
       padding: 20px;
+      box-sizing: border-box; /* Para que padding no aumente ancho */
     }
 
     section {
@@ -64,23 +66,26 @@
 
     /* Imagen IH03 responsiva */
     .tech-image {
-      max-width: 100%;
+      max-width: 100vw; /* No superar ancho viewport */
+      width: 100%;
       height: auto;
       display: block;
       margin: 20px auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-sizing: border-box;
     }
 
     /* Video responsivo */
     video {
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      max-width: 100vw; /* No superar ancho viewport */
       width: 100%;
       height: auto;
-      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
       display: block;
       margin: 20px auto;
+      box-sizing: border-box;
     }
 
     footer {
