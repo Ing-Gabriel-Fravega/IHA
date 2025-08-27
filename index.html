@@ -158,8 +158,7 @@
   function speak() {
     if (iniciado) return;
     iniciado = true;
-    const texto = "Estás viendo la presentación del sitio web del ingeniero gabriel frávega dedicada a desarrollos tecnológicos disruptivos, cuyo núcleo central es el motor tecnólógico más avanzado del mundo: nominado: inteligencia humana aplicada - derechos reservados. Aquí encontrarás detalles y fundamentos de vanguardia que funcionan dentro de ecosistemas múltiples, con marcos que limitan su funcionamiento tecnico objetivo y ético".
-        ); 
+    const texto = "Estás viendo la presentación del sitio web del ingeniero gabriel frávega dedicada a desarrollos tecnológicos disruptivos, cuyo núcleo central es el motor tecnólógico más avanzado del mundo: nominado: inteligencia humana aplicada - derechos reservados. Aquí encontrarás detalles y fundamentos de vanguardia que funcionan dentro de ecosistemas múltiples, con marcos que limitan su funcionamiento tecnico objetivo y ético";
     const utterance = new SpeechSynthesisUtterance(texto);
     utterance.lang = 'es-ES';
     synth.speak(utterance);
