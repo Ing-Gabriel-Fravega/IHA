@@ -141,7 +141,27 @@
     <section class="sobre-mi">
       <h2>Presentación</h2>
       <p>Este sitio está dedicado a la publicación de mis trabajos y desarrollos, en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
-    
+
+<!-- Texto hablado automático -->
+  <script>
+    window.addEventListener('load', () => {
+      const synth = window.speechSynthesis;
+      let voices = [];
+
+      function speak() {
+        const utterance = new SpeechSynthesisUtterance(
+          "Estás viendo la segunda página dedicada a desarrollos tecnológicos disruptivos. Aquí encontrarás detalles y fundamentos de vanguardia."
+        );
+        utterance.lang = 'es-ES';
+        synth.speak(utterance);
+      }
+
+      speak();
+    });
+      </script> 
+
+
+      
       <!-- Texto hablado automático -->
       <script>
     window.addEventListener('load', () => {
