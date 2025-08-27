@@ -126,6 +126,25 @@
     <h1>Gabriel Frávega</h1>
     <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA®-IHA3® (2024/2025)</p>
     <h1>INTELIGENCIA HUMANA APLICADA: IHA®</h1>
+
+  <!-- Texto hablado automático -->
+  <script>
+    window.addEventListener('load', () => {
+      const synth = window.speechSynthesis;
+      let voices = [];
+
+      function speak() {
+        const utterance = new SpeechSynthesisUtterance(
+          "Estás viendo la presentación del sitio web del ingeniero gabriel frávega dedicada a desarrollos tecnológicos disruptivos, cuyo núcleo central es el motor tecnólógico más avanzado del mundo: nominado: inteligencia humana aplicada - derechos reservados. Aquí encontrarás detalles y fundamentos de vanguardia que funcionan dentro de ecosistemas múltiples, con ,ercos que limitan su funcionamiento ´tecnico objetivo y ético."
+        );
+        utterance.lang = 'es-ES';
+        synth.speak(utterance);
+      }
+
+      speak();
+    });
+      </script> 
+    
     <p>MOTOR TECNOLÓGICO</p>
     <img src="IH03.png" alt="IH03" class="tech-image" />
   </header>
