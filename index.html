@@ -164,10 +164,39 @@
     synth.speak(utterance);
   }
 
-  // Esperar primera interacción del usuario
-  window.addEventListener('click', speak);
-  window.addEventListener('keydown', speak);
-  window.addEventListener('touchstart', speak);
+  // Intentar reproducir automáticamente al cargar la página
+  window.addEventListener("load", () => {
+    speak();
+  });
+
+  // Si el navegador bloquea el autoplay, se lanza en la primera interacción
+  window.addEventListener("click", speak);
+  window.addEventListener("keydown", speak);
+  window.addEventListener("touchstart", speak);
+
+ <script>
+  const synth = window.speechSynthesis;
+  let iniciado = false;
+
+  function speak() {
+    if (iniciado) return;
+    iniciado = true;
+
+    const texto = "Estás viendo la presentación del sitio web del ingeniero Gabriel Frávega dedicada a desarrollos tecnológicos disruptivos, cuyo núcleo central es el motor tecnológico más avanzado del mundo: nominado: inteligencia humana aplicada - derechos reservados. Aquí encontrarás detalles y fundamentos de vanguardia que funcionan dentro de ecosistemas múltiples, con marcos que limitan su funcionamiento técnico, objetivo y ético";
+    const utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = "es-ES";
+    synth.speak(utterance);
+  }
+
+  // Intentar reproducir automáticamente al cargar la página
+  window.addEventListener("load", () => {
+    speak();
+  });
+
+  // Si el navegador bloquea el autoplay, se lanza en la primera interacción
+  window.addEventListener("click", speak);
+  window.addEventListener("keydown", speak);
+  window.addEventListener("touchstart", speak);
 </script>
 
             
