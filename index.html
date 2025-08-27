@@ -150,7 +150,9 @@
     <section class="sobre-mi">
       <h2>Presentación</h2>
       <p>Este sitio está dedicado a la publicación de mis trabajos y desarrollos, en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
-<script>
+
+      
+ <script>
   const synth = window.speechSynthesis;
   let iniciado = false;
 
@@ -159,22 +161,29 @@
     iniciado = true;
 
     const texto = "Estás viendo la presentación del sitio web del ingeniero Gabriel Frávega dedicada a desarrollos tecnológicos disruptivos, cuyo núcleo central es el motor tecnológico más avanzado del mundo: nominado: inteligencia humana aplicada - derechos reservados. Aquí encontrarás detalles y fundamentos de vanguardia que funcionan dentro de ecosistemas múltiples, con marcos que limitan su funcionamiento técnico, objetivo y ético";
+
     const utterance = new SpeechSynthesisUtterance(texto);
     utterance.lang = "es-ES";
-    synth.speak(utterance);
+
+    if (synth.getVoices().length === 0) {
+      synth.addEventListener("voiceschanged", () => synth.speak(utterance));
+    } else {
+      synth.speak(utterance);
+    }
   }
 
-  // Intentar reproducir automáticamente al cargar la página
+  // Intento al cargar
   window.addEventListener("load", () => {
-    speak();
+    setTimeout(speak, 500);
   });
 
-  // Si el navegador bloquea el autoplay, se lanza en la primera interacción
+  // Fallbacks: cualquier interacción desbloquea la voz
   window.addEventListener("click", speak);
   window.addEventListener("keydown", speak);
   window.addEventListener("touchstart", speak);
+  window.addEventListener("wheel", speak);   // rodillo del mouse
+  window.addEventListener("scroll", speak);  // scroll de la página
 </script>
-            
       <br><br>
       Actualización 15 de agosto de 2025
        <br><br>
