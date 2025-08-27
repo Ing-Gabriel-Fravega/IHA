@@ -152,7 +152,7 @@
       <p>Este sitio está dedicado a la publicación de mis trabajos y desarrollos, en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
 
       
- <script>
+<script>
   const synth = window.speechSynthesis;
   let iniciado = false;
 
@@ -165,25 +165,28 @@
     const utterance = new SpeechSynthesisUtterance(texto);
     utterance.lang = "es-ES";
 
-    if (synth.getVoices().length === 0) {
-      synth.addEventListener("voiceschanged", () => synth.speak(utterance));
-    } else {
-      synth.speak(utterance);
-    }
+    synth.speak(utterance);
   }
 
-  // Intento al cargar
+  // Forzar carga de voces
+  window.speechSynthesis.onvoiceschanged = () => {
+    // si querés que arranque solo:
+    // speak();
+  };
+
+  // Intento automático al cargar (puede ser bloqueado en algunos navegadores)
   window.addEventListener("load", () => {
-    setTimeout(speak, 500);
+    setTimeout(speak, 800);
   });
 
-  // Fallbacks: cualquier interacción desbloquea la voz
-  window.addEventListener("click", speak);
-  window.addEventListener("keydown", speak);
-  window.addEventListener("touchstart", speak);
-  window.addEventListener("wheel", speak);   // rodillo del mouse
-  window.addEventListener("scroll", speak);  // scroll de la página
+  // Desbloqueo con cualquier interacción del usuario
+  ["click", "keydown", "touchstart", "wheel", "scroll"].forEach(evt => {
+    window.addEventListener(evt, speak);
+  });
 </script>
+
+
+      
       <br><br>
       Actualización 15 de agosto de 2025
        <br><br>
