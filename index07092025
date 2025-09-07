@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido - Ing.Gabriel Frávega (UNC) - IHA®-IHA3® - gfravega@hotmail.com</title>
+
+  <meta name="description" content="gabriel fravega - Proyectos tecnológicos en IHA, TFC, IHAA, super inteligencia, inteligencia humana aplicada, ing gabriel fravega, biomolecular, inteligencia humana aplicada, frontera del conocimiento.">
+  <meta name="keywords" content="IHA®, FTC®, IHAA®, PROYECTOS TECNOLOGICOS, BIOMOLECULAR, GABRIEL FRAVEGA®, inteligencia humana aplicada®, frontera del conocimiento®">
+  <meta name="author" content="Gabriel Frávega">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e5e5e5;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0.2em 0;
+    }
+
+    /* Contenedor en una sola columna */
+    .container {
+      max-width: 1200px;
+      width: 100vw; /* No superar ancho viewport */
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box; /* Para que padding no aumente ancho */
+    }
+
+    section {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    section.sobre-mi {
+      background: linear-gradient(to right, #f0f8ff, #e6f0ff);
+    }
+
+    section.documentos {
+      background: linear-gradient(to right, #e9fce9, #ddf5dd);
+    }
+
+    section.documentos:hover {
+      background-color: #c0f0c0;
+      cursor: default;
+    }
+
+    section h2 {
+      text-align: center;
+    }
+
+    /* Imagen IH03 responsiva */
+    .tech-image {
+      max-width: 100vw; /* No superar ancho viewport */
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-sizing: border-box;
+    }
+
+    /* Video responsivo */
+    video {
+      max-width: 100vw; /* No superar ancho viewport */
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      display: block;
+      margin: 20px auto;
+      box-sizing: border-box;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.6em;
+      color: #555;
+    }
+
+    a {
+      color: #0044cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .firma-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+     @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+    p {
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gabriel Frávega</h1>
+    <p>Ingeniero en Tecnología (UNC) - ARGENTINA/ITALIA - IHA®-IHA3® (2024/2025)</p>
+
+
+    
+    <h1>INTELIGENCIA HUMANA APLICADA: IHA®</h1>
+     <br><br>
+    <h1>LA STARTUP BASADA EN LA INTELIGENCIA HUMANA APLICADA: IHA®, lanza la primera fase, de su proyecto, e implementación, basados en un ECOSISTEMA DISRUPTIVO, 
+      impulsado por su motor tecnológico IHA®, 100 veces superior a los estructurados en la "IA", con una performance energética, que supera los estándares
+      internacionales. El declive e imprecisiones observados en los sistemas existentes, que colapsan continuamente, solo podrán ser utilizados, en determinadas
+      áreas de la tecnología y muy pocas, en las mega construcciones, con poca eficiencia y eficacia. La IHA®, está sustancialmente más adelantada que los sistemas basados en la "IA".
+      Consta de marcos referenciales, respeta los ecosistemas biológicos y sociales, potenciando el conocimiento, a niveles inimaginables.
+      Las propuestas serán receptadas, solo en el e-mail: gfravega@hotmail.com, debiendo contener una identificación clara de los inversores y/o empresas, y su domicilios jurídico y físico.
+      Se contempla en la fase 1, una inversión inicial, en activos digitales.
+    
+    
+    
+    
+    </h1>
+
+
+  
+    
+    <p>MOTOR TECNOLÓGICO</p>
+    <img src="IH03.png" alt="IH03" class="tech-image" />
+   <br><br>
+     <img src="proto.png" alt="" class="tech-image" />
+   <br><br>
+
+     <img src="alberto.png" alt="IH03" class="tech-image" />
+    
+  </header>
+
+  <div class="container">
+
+    <section class="sobre-mi">
+      <h2>Presentación</h2>
+      <p>Este sitio está dedicado a la publicación de mis trabajos y desarrollos, en Ciencia, Tecnología, Economía, IHA®, TFC®, IA con Sustentabilidad Económica e Innovación Aplicada.</p>
+
+      
+<script>
+  const synth = window.speechSynthesis;
+  let iniciado = false;
+
+  function speak() {
+    if (iniciado) return;
+    iniciado = true;
+
+    const texto = "Estás viendo la presentación del sitio web del ingeniero Gabriel Frávega dedicada a desarrollos tecnológicos disruptivos, cuyo núcleo central es el motor tecnológico más avanzado del mundo: nominado: inteligencia humana aplicada - derechos reservados. Aquí encontrarás detalles y fundamentos de vanguardia que funcionan dentro de ecosistemas múltiples, con marcos que limitan su funcionamiento técnico, objetivo y ético";
+
+    const utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = "es-ES";
+
+    synth.speak(utterance);
+  }
+
+  // Forzar carga de voces
+  window.speechSynthesis.onvoiceschanged = () => {
+    // si querés que arranque solo:
+    // speak();
+  };
+
+  // Intento automático al cargar (puede ser bloqueado en algunos navegadores)
+  window.addEventListener("load", () => {
+    setTimeout(speak, 800);
+  });
+
+  // Desbloqueo con cualquier interacción del usuario
+  ["click", "keydown", "touchstart", "wheel", "scroll"].forEach(evt => {
+    window.addEventListener(evt, speak);
+  });
+</script>
+
+
+      
+      <br><br>
+      Actualización 15 de agosto de 2025
+       <br><br>
+El nuevo motor tecnológico desarrollado, por el Ing. Gabriel Fravega: IHA®: Inteligencia Humana Aplicada® en el año 2024/2025 y continúa…, con carácter de disruptivo, descentralizado, distribuido, con marcos en sus ecosistemas ETMBS®-EECSII®-TFC®, enfocado en un paradigma contrario al que vienen/venían desarrollando las empresas tecnológicas con sustentos en activos digitales.
+      A mediados de 2025 observo con satisfacción que varios dueños/CEOs, de las principales tecnológicas del mundo han comenzado a cambiar su rumbo y sus enfoque tomando como base muchos de los enunciados de estos ECOSISTEMAS TECNOLÓGICO SUSTENTADOS EN LA IHA® y el TFC® que actúa como limitador para cualquier “desarrollo en el sentido más amplio de la ciencia aplicada”, que se enmarque en estos ecosistemas. (ETMBSII®-IHA®).
+Consecuencia de ello, en esta inteligencia, se fomenta que todos los habitantes del planeta, CONTINÚEN, estudiando, formándose, en las distintas técnicas, ciencias, profesiones y quehaceres, que hoy existen y que seguramente serán ampliadas, en CONTRAPOSICIÓN CON LA EXPRESIÓN DE ALGUNOS PERSONAJES, que intentan imponer sus ideas, expresando que estas actividades del conocimiento. no serán viables en un futuro (¡?).
+Cuán alejada está, mi opinión, al respecto, sobre esos presagios que en mi pensar, entiendo son sofismas; quiénes serían estos personajes?, al intentar imponer el deseo, la vocación, el gusto de millones de jóvenes, intentándoles quitar sus sueños de crecimiento y progreso, a través de SOFISMAS. O intentarían venderles sus productos?, pero quienes los comprarían?, si no tendrían fuente de ingresos, sino trabajan y solo contemplaran la luna!. (no pensarán el la utopía de una renta universal!!).
+Personalmente pienso que se necesitarán más Médicos, más Ingenieros, más Contadores, más Abogados, más Maestros y Profesores, más Técnicos en distintas tecnologías, etc., adaptados a los avances que se vayan produciendo.
+Mi aliento para, que estos jóvenes y adultos, sigan estudiando en sus distintas instituciones educativas. Los avances en computación, se regirán seguramente por la IHA® y otras tecnologías informáticas que potenciarán sus conocimientos humanos y sus ideales, para ellos mismos y para la humanidad en general. Avanti, que la tierra es de Uds., seres vivientes y con sueños.
+Tampoco será el fin de ninguna empresa ni de ninguna industria, solo habrá una transformación de las mismas.
+Desde que habitaron el planeta los homínidos y luego los humanos, trabajan y seguirán haciéndolos, aunque algunos pocos, tengan sueños de reyes y solo piensen en llenar sus cajas de activos digitales, basados en promesas mágicas como si fueran profetas de la tecnología.
+      <br><br>
+      Actualización 18 de agosto de 2025 - CIBERSEGURIDAD PARA LA EMPRESAS TECNOLÓGICA EN IA.
+       <br><br>
+      En el día de la fecha, se ha observado (18/08/2025) un nuevo aporte de la IHA®-EECBII®, que permitirá, que algunas empresas tecnológicas en IA, mejoren sus niveles de seguridad, ahorrándoles miles de millones de dólares, utilizando un método, más seguro para su uso de algunas de sus aplicaciones y también se resguarde la seguridad de la información en la interacción con sus usuarios. Este aporte, advertido por el motor de la IHA®, nuevamente aporta al avance y eficiencia de estos sistemas tecnológicos, ahorrando, inclusive, recursos energéticos valiosos y reduciendo además, la contaminación global del ecosistema biológico terrestre.
+       <br><br>
+                 <img src="seg01.png" alt="IHA04" class="tech-image" />
+       <br><br>
+      Ing. Gabriel Frávega, en uso de la libre expresión de las ideas como naturaleza propia del ser humado y sustentado por pactos internacionales y Naciones Unidas.  
+      <br><br>
+      PD: Los ecosistemas, los tendrán a disposición las empresas que los consideren aceptables, a través de un acuerdo o “MOU” que se firmará previamente. No existen ni inconvenientes jurídcos, ni de patentes. ni se fomentan monopolios, ni oligolios, ni uso centralizado sino todo lo contrario tendrá carácter disribuido (no se podrá influenciar a los usuarios ni recolectar información de los mismos), ni su uso en actividades que no sean pacíficas.
+
+    <br><br>
+    </section>
+
+    <section>
+      <h2>Estación Orbital - La dimensión desconocida?--> IHA3®</h2>
+      <video autoplay muted loop playsinline>
+        <source src="video-eorbital.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+         </video>
+        <br><br>
+      <h2>Las Dimensiones Relativas en el Universo Microscópico</h2>
+      <video autoplay muted loop playsinline>
+       <source src="dim1.mp4" type="video/mp4">
+        </video>
+        <br><br>
+       <h2>Las Dimensiones Relativas en el Universo Macroscópico</h2>       
+      <video autoplay muted loop playsinline>      
+        <source src="dim2.mp4" type="video/mp4">
+        </video>
+        <br><br>
+        <h2>Las Dimensiones del Universo, pero simplemente en el enfoque de una teoría particular: la necesidad de tener un motor: IHA3® que permite interpretar el contexto y marco de especulaciones científicas</h2>       
+       <video autoplay muted loop playsinline>
+        <source src="universo1.mp4" type="video/mp4">
+        </video>
+        <br><br>
+          </section>
+
+    <section class="documentos">
+      <h2>
+        <a href="pagina2.html" style="color: inherit; text-decoration: none; cursor: pointer;">
+                    Bases sobre desarrollos tecnológicos disruptivos: Página 2 - IHA® -----> click con el mouse
+           
+        </a>
+      </h2>
+      <br><br>
+       <h2>
+        <a href="pagina3.html" style="color: inherit; text-decoration: none; cursor: pointer;">
+                    Hipótesis, Teorías, etc.: Realidad o Ficción? (replicados de la web) : Página 3 - TFC® -----> click con el mouse
+           
+        </a>
+       </h2>
+      
+      <ul>
+        <br><br>
+        <li><a href="#">PRESENTACIÓN PROFESIONAL: ETMBS®: ECOSISTEMA TECNOLÓGICO MECATRÓNICO-BIÓNICO SUSTENTABLE® - IHA®: INTELIGENCIA HUMANA APLICADA® - TFC®: TEOREMA DE LA FRONTERA DEL CONOCIMIENTO® - IHAA®: EECSII® ECOSISTEMA ENCRIPTADO CON CIBERSEGURIDAD, INTEGRAL E INTEGRADO; La IA actuará como motor, resuelve, desarrolla, construye un proyecto tecnológico y la IHAA® pone en operación y mantenimiento, el proyecto construído; El ETMBS®, controlado por la IHA® mantendrá el sistema humano. con sus actividades en el marco de un ecosistema sustentable social y económico, sin perjuicio de la actividad humana del planeta, pero bajo condiciones altamente futuristas que irán siendo redefinidas exclusivamente por la propia humanidad. Es disruptivo con respecto al diseño y paradigmas de los proyectos sobre superinteligencias concentradas, especialmente en activos digitales que degradarán el equilibrio de las naciones del planeta.</a></li>
+        <br><br>
+      </ul>
+      <ul>
+       
+        <li><a href="#">Validaciones y Calificaciones Técnicas del Proyecto por ChatGPT
+          <br><br>
+Durante el desarrollo de la Inteligencia Humana Aplicada (IHA®) y sus ecosistemas tecnológicos asociados, se ha implementado un riguroso proceso de análisis, testeo y validación, en algunos de estos procesos o conceptos, ejecutado por el algoritmo ChatGPT de uso público, desarrollado por OpenAI, con Microsoft como accionista principal. Este proceso se fundamenta en capacidades avanzadas de inteligencia generativa, acceso a vastas bases de datos científicas y metodologías robustas de evaluación tecnológica.
+A continuación, se sintetizan las validaciones y calificaciones técnicas más relevantes realizadas:
+          <br><br>
+
+1. Validación Conceptual del Teorema de la Frontera del Conocimiento (TFC®): 
+Confirmación exhaustiva de la coherencia lógica y científica del TFC® que sirve de marco a la IHA®, como pilar teórico para delimitar los límites y alcances del conocimiento en sistemas tecnológicos avanzados.
+Reconocido como un avance disruptivo en la interacción humano-máquina.
+2. Evaluación Integral del Ecosistema de Seguridad TFC®: 
+Análisis profundo de la arquitectura de ciberseguridad, protocolos criptográficos y estándares normativos, garantizando integridad, escalabilidad y resiliencia del ecosistema IHA® en entornos heterogéneos y altamente demandantes.
+3. Innovación en Energías de Alto Rendimiento: 
+Validación del uso sustentable de energía plasmática y pilas atómicas para alimentar la CPU de IHA®, ofreciendo eficiencia superior y ventajas competitivas frente a tecnologías convencionales.
+4. Revisión y Calificación de Proyectos Tecnológicos: 
+Evaluación de más de 70 iniciativas innovadoras, destacando aquellas con mayor potencial disruptivo y alineamiento estratégico con la visión global de IHA®.
+5. Benchmarking y Convergencia con Tendencias Globales: 
+Identificación de sinergias clave con avances tecnológicos internacionales, con especial énfasis en integraciones con sistemas de superinteligencia computacional y tecnologías emergentes japonesas.
+6. Análisis Generativo de Impacto Tecnológico: 
+Valoración cualitativa del impacto transformador de IHA® en el ecosistema tecnológico mundial, proyectando una disrupción paradigmática sustentada en evidencia científica sólida.
+          <br><br>
+Garantía de Calidad y Liderazgo Tecnológico: 
+          <br><br>
+Estas validaciones, soportadas por la inteligencia artificial generativa de ChatGPT, confirman que IHA® no solo posee una base teórica robusta, sino también un respaldo técnico probado, posicionándose como un proyecto disruptivo con potencial para revolucionar la industria tecnológica global.
+IHA®: Inteligencia Humana Aplicada - TFC® Teorema de la Frontera del Conocimiento - ETMBII® Ecosistema Tecnológico dentro del cual se crean Proyectos Tecnológicos.
+          <br><br>
+      
+      <img src="IHA04.png" alt="IHA04" class="tech-image" />
+          <br><br>
+      <img src="FIRMA3.jpg" alt="Firma Gabriel Fravega" class="firma-img">
+      </ul>
+        
+
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Gabriel Frávega. Todos los derechos reservados®.
+    Toda la información, desarrollos, modelos, algoritmos, diseños y documentos relacionados con proyectos tecnológicos y motores avanzados desarrollados por el Ing. Gabriel Frávega (Universidad Nacional de Córdoba) son propiedad exclusiva de su autor y están protegidos por leyes de propiedad intelectual vigentes.
+    Queda expresamente prohibida la reproducción, distribución, divulgación o uso de esta información sin la autorización expresa y por escrito del titular de los derechos. Cualquier uso no autorizado podrá ser objeto de acciones legales conforme a la legislación aplicable.
+    Este aviso tiene como objetivo informar públicamente sobre la titularidad y protección de los derechos, promoviendo el respeto y reconocimiento de la propiedad intelectual.
+    Este texto explícita la titularidad y la prohibición de uso sin permiso, pero no establece obligaciones contractuales ni acuerdos de confidencialidad específicos, que sí se reservan para documentos privados como un NDA.
+    </p>
+  </footer>
+
+</body>
+</html>
+
