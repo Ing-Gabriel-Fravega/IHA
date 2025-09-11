@@ -368,6 +368,16 @@ Desde que habitaron el planeta los homínidos y luego los humanos, trabajan y se
          </video>
       <button onclick="playVideo2()">Reproducir con sonido</button>
         <br><br>
+      
+   <script>
+function playVideo2() {
+  const vid = document.getElementById('video2');
+  vid.play().catch(error => {
+    console.log("No se pudo reproducir automáticamente:", error);
+  });
+}
+   </script>
+
 
 <h2>IHA® - 11 de septiembre de 2025 - Fragmentos del motor técnológico IHA® (1%), utilizado interpretaciones cotidianas de la física eléctrica</h2>
 <video id="video2" loop playsinline controls>
