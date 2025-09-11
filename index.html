@@ -361,22 +361,25 @@ Desde que habitaron el planeta los homínidos y luego los humanos, trabajan y se
          </video>
         <br><br>
 
- <h2>IHA® - 10 de septiembre de 2025 - Fragmentos del motor técnológico IHA® (1%), utilizado en una fábrica actual, La humanidad avanzada: el único futuro posible.</h2>
-     <video id="video2" loop playsinline controls>
-        <source src="HUN.mp4" type="video/mp4">
-        Tu navegador no soporta la reproducción de video.
-         </video>
-      <button onclick="playVideo2()">Reproducir con sonido</button>
-        <br><br>
-      
-   <script>
+      <h2>IHA® - 10 de septiembre de 2025 - Fragmentos del motor técnológico IHA® (1%), utilizado en una fábrica actual, La humanidad avanzada: el único futuro posible.</h2>
+
+<video id="video2" playsinline controls>
+  <source src="HUN.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+
+<button onclick="playVideo2()">Reproducir con sonido</button>
+<br><br>
+
+<script>
 function playVideo2() {
   const vid = document.getElementById('video2');
+  vid.muted = false; // activa el sonido
   vid.play().catch(error => {
     console.log("No se pudo reproducir automáticamente:", error);
   });
 }
-   </script>
+</script>
 
 
 <h2>IHA® - 11 de septiembre de 2025 - Fragmentos del motor técnológico IHA® (1%), utilizado interpretaciones cotidianas de la física eléctrica</h2>
