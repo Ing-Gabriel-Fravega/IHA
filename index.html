@@ -595,14 +595,14 @@ for (let i = 0; i < 60; i++) {
 }
 
 function draw1() {
-    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
 
     particles1.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
 
-        if(p.x < 0 || p.x > canvas2.width) p.vx *= -1;
-        if(p.y < 0 || p.y > canvas2.height) p.vy *= -1;
+        if(p.x < 0 || p.x > canvas1.width) p.vx *= -1;
+        if(p.y < 0 || p.y > canvas1.height) p.vy *= -1;
 
         ctx1.beginPath();
         ctx1.arc(p.x, p.y, 2, 0, Math.PI*2);
@@ -615,11 +615,11 @@ function draw1() {
             let dist = Math.sqrt(dx*dx + dy*dy);
 
             if(dist < 80){
-                ctx2.beginPath();
-                ctx2.moveTo(p.x, p.y);
-                ctx2.lineTo(p2.x, p2.y);
-                ctx2.strokeStyle = "rgba(255,255,255,0.15)";
-                ctx2.stroke();
+                ctx1.beginPath();
+                ctx1.moveTo(p.x, p.y);
+                ctx1.lineTo(p2.x, p2.y);
+                ctx1.strokeStyle = "rgba(255,255,255,0.15)";
+                ctx1.stroke();
             }
         });
     });
