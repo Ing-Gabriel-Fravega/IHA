@@ -513,7 +513,7 @@ The Next Generation of Applied Engineering in Technology and Computing: IHA® </
       
 ------------------------------------------
 
-<H2>LO QUE SE VIENE: IHA®: la vanguardia del futuro en abierta oposición al diseñadores y dueños de la IA tradicional.
+<H2>LO QUE SE VIENE: IHA®: la vanguardia del futuro en abierta oposición a los diseñadores y dueños de la IA tradicional.
 UN ECOSISTEMA TECNOLÓGICO/IHA®/TFC® que podría revolucionar el mundo de la tecnología, LAS MEGACONSTRUCCIONES, el conocimiento y la eficiencia del ecosistema terrestre. Ing. Gabriel Frávega®-gfravega@hotmail.com
     </H2>
       
@@ -767,40 +767,69 @@ document.getElementById("musica").play();
 
       
 <style>
-.full-bestial-final {
+.full-lujo {
   font-size: 28px;
   font-weight: bold;
   text-align: center;
-  background: linear-gradient(90deg, #ff4d4d, #ff9900, #ffffff); /* rojo → naranja → blanco */
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 
-     0 0 3px #ffffff,
-     0 0 8px #ff9900,
-     0 0 15px #ff4d4d;
-  animation: pulse-fire 2s linear infinite, flicker 1.5s infinite alternate;
+  color: #00ffff; /* azul neón */
+  background-color: #111111; /* fondo oscuro para contraste */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-shadow:
+     0 0 5px #00ffff,
+     0 0 10px #00ffff,
+     0 0 20px #00ffff,
+     0 0 30px #00ffff,
+     0 0 40px #00ffff;
+  animation: neon-flicker 1.5s infinite alternate, pulse 2s infinite;
 }
 
-@keyframes pulse-fire {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #00ffff;
+  }
+  20%, 24%, 55% {
+    text-shadow:
+      0 0 2px #00ffff,
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 15px #00ffff,
+      0 0 20px #00ffff;
+  }
 }
 
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 
-     0 0 3px #fff, 0 0 8px #ff9900, 0 0 15px #ff4d4d; }
-  20%, 24%, 55% { text-shadow: 
-     0 0 2px #fff, 0 0 4px #ff9900, 0 0 6px #ff4d4d; }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
-  
+
+/* Chispitas leves */
+.full-lujo::after {
+  content: "✨";
+  position: absolute;
+  animation: spark 1.8s infinite;
+}
+
+@keyframes spark {
+  0%, 100% { opacity: 0; transform: translate(0,0) rotate(0deg); }
+  50% { opacity: 1; transform: translate(5px,-5px) rotate(20deg); }
+}
 </style>
 
-<p class="full-bestial-final">
+<p class="full-lujo">
 PD: los algoritmos se prueban, los proyectos de ingeniería se desarrollan y se construyen!!!
 </p>
-   
+
+------------------------------------------------------------------------------
+      
+      
 VALIDACIÓN EXTERNA – DATACIÓN EXTERNA – GOOGLE IA – MARZO DE 2026
 NAVEGADOR GOOGLE - [11:17, 13/3/2026] Gabriel: El Ing. Gabriel Frávega es un profesional egresado de la Universidad Nacional de Córdoba (UNC), reconocido por ser el desarrollador e inventor de la IHA® (Inteligencia Humana Aplicada). 
 ¿Qué es la IHA®?
