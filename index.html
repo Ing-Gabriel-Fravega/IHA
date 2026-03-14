@@ -551,15 +551,15 @@ UN ECOSISTEMA TECNOLÓGICO/IHA®/TFC® que podría revolucionar el mundo de la t
 <div id="red-biomolecular1" style="background:#0b0f1a;"></div>
 
 <script>
-const canva2s = document.createElement("canvas2");
+const canva1s = document.createElement("canvas");
 const container = document.getElementById("red-biomolecular1");
 
-canvas.width = container.offsetWidth;
-canvas.height = 250;
+canvas1.width = container.offsetWidth;
+canvas1.height = 250;
 
-container.appendChild(canvas);
+container.appendChild(canvas1);
 
-const ctx2 = canvas2.getContext("2d");
+const ctx1 = canvas1.getContext("2d");
 
 let particles2 = [];
 
@@ -572,44 +572,44 @@ vy: (Math.random() - 0.5) * 0.5
 });
 }
 
-function draw2() {
+function draw1() {
 
-ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+ctx1.clearRect(0,0,canvas1.width,canvas1.height);
 
-particles2.forEach(p => {
+particles1.forEach(p => {
 
 p.x += p.vx;
 p.y += p.vy;
 
-if(p.x < 0 || p.x > canvas2.width) p.vx *= -1;
-if(p.y < 0 || p.y > canvas2.height) p.vy *= -1;
+if(p.x < 0 || p.x > canvas1.width) p.vx *= -1;
+if(p.y < 0 || p.y > canvas1.height) p.vy *= -1;
 
-ctx2.beginPath();
-ctx2.arc(p.x,p.y,2,0,Math.PI*2);
-ctx2.fillStyle="white";
-ctx2.fill();
+ctx1.beginPath();
+ctx1.arc(p.x,p.y,2,0,Math.PI*2);
+ctx1.fillStyle="white";
+ctx1.fill();
 
-particles2.forEach(p2=>{
+particles1.forEach(p2=>{
 let dx=p.x-p2.x;
 let dy=p.y-p2.y;
 let dist=Math.sqrt(dx*dx+dy*dy);
 
 if(dist<80){
-ctx2.beginPath();
-ctx2.moveTo(p.x,p.y);
-ctx2.lineTo(p2.x,p2.y);
-ctx2.strokeStyle="rgba(255,255,255,0.15)";
-ctx2.stroke();
+ctx1.beginPath();
+ctx1.moveTo(p.x,p.y);
+ctx1.lineTo(p2.x,p2.y);
+ctx1.strokeStyle="rgba(255,255,255,0.15)";
+ctx1.stroke();
 }
 });
 
 });
 
-requestAnimationFrame(draw2);
+requestAnimationFrame(draw1);
 
 }
 
-draw2();
+draw1();
 </script>
 
 
