@@ -550,68 +550,65 @@ UN ECOSISTEMA TECNOLÓGICO/IHA®/TFC® que podría revolucionar el mundo de la t
 
 <div id="red-biomolecular1" style="background:#0b0f1a;"></div>
 
+<div id="red-biomolecular1" style="background:#0b0f1a;"></div>
+
 <script>
-const canva1s = document.createElement("canvas");
+const canvas2 = document.createElement("canvas"); // siempre "canvas", variable JS = canvas2
 const container = document.getElementById("red-biomolecular1");
 
-canvas1.width = container.offsetWidth;
-canvas1.height = 250;
+canvas2.width = container.offsetWidth;
+canvas2.height = 250;
 
-container.appendChild(canvas1);
+container.appendChild(canvas2);
 
-const ctx1 = canvas1.getContext("2d");
+const ctx2 = canvas2.getContext("2d");
 
 let particles2 = [];
 
 for (let i = 0; i < 60; i++) {
-particles2.push({
-x: Math.random() * canvas1.width,
-y: Math.random() * canvas1.height,
-vx: (Math.random() - 0.5) * 0.5,
-vy: (Math.random() - 0.5) * 0.5
-});
+    particles2.push({
+        x: Math.random() * canvas2.width,
+        y: Math.random() * canvas2.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5
+    });
 }
 
-function draw1() {
+function draw2() {
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
 
-ctx1.clearRect(0,0,canvas1.width,canvas1.height);
+    particles2.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
 
-particles1.forEach(p => {
+        if(p.x < 0 || p.x > canvas2.width) p.vx *= -1;
+        if(p.y < 0 || p.y > canvas2.height) p.vy *= -1;
 
-p.x += p.vx;
-p.y += p.vy;
+        ctx2.beginPath();
+        ctx2.arc(p.x, p.y, 2, 0, Math.PI*2);
+        ctx2.fillStyle = "white";
+        ctx2.fill();
 
-if(p.x < 0 || p.x > canvas1.width) p.vx *= -1;
-if(p.y < 0 || p.y > canvas1.height) p.vy *= -1;
+        particles2.forEach(p2=>{
+            let dx = p.x - p2.x;
+            let dy = p.y - p2.y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
 
-ctx1.beginPath();
-ctx1.arc(p.x,p.y,2,0,Math.PI*2);
-ctx1.fillStyle="white";
-ctx1.fill();
+            if(dist < 80){
+                ctx2.beginPath();
+                ctx2.moveTo(p.x, p.y);
+                ctx2.lineTo(p2.x, p2.y);
+                ctx2.strokeStyle = "rgba(255,255,255,0.15)";
+                ctx2.stroke();
+            }
+        });
+    });
 
-particles1.forEach(p2=>{
-let dx=p.x-p2.x;
-let dy=p.y-p2.y;
-let dist=Math.sqrt(dx*dx+dy*dy);
-
-if(dist<80){
-ctx1.beginPath();
-ctx1.moveTo(p.x,p.y);
-ctx1.lineTo(p2.x,p2.y);
-ctx1.strokeStyle="rgba(255,255,255,0.15)";
-ctx1.stroke();
-}
-});
-
-});
-
-requestAnimationFrame(draw1);
-
+    requestAnimationFrame(draw2);
 }
 
-draw1();
+draw2();
 </script>
-
 
 
 
