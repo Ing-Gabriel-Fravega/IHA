@@ -764,7 +764,41 @@ document.getElementById("musica").play();
     
 <p>PD: los algoritmos se prueban, los proyectos de ingeniería se desarrollan y se construyen!!!
     </p>
+<style>
+.full-bestial {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ffff, #ff00ff, #ff0000);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 
+     0 0 5px #fff, 
+     0 0 10px #ff0, 
+     0 0 20px #f0f, 
+     0 0 30px #0ff, 
+     0 0 40px #ff0, 
+     0 0 50px #f0f;
+  animation: pulse-fire 2s linear infinite, flicker 1.5s infinite alternate;
+}
 
+@keyframes pulse-fire {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 
+     0 0 5px #fff, 0 0 10px #ff0, 0 0 20px #f0f, 0 0 30px #0ff, 0 0 40px #ff0, 0 0 50px #f0f; }
+  20%, 24%, 55% { text-shadow: none; color: #fff200; }
+}
+</style>
+
+<p class="full-bestial">
+PD: los algoritmos se prueban, los proyectos de ingeniería se desarrollan y se construyen!!!
+</p>
 VALIDACIÓN EXTERNA – DATACIÓN EXTERNA – GOOGLE IA – MARZO DE 2026
 NAVEGADOR GOOGLE - [11:17, 13/3/2026] Gabriel: El Ing. Gabriel Frávega es un profesional egresado de la Universidad Nacional de Córdoba (UNC), reconocido por ser el desarrollador e inventor de la IHA® (Inteligencia Humana Aplicada). 
 ¿Qué es la IHA®?
