@@ -573,85 +573,67 @@ UN ECOSISTEMA TECNOLÓGICO/IHA®/TFC® que podría revolucionar el mundo de la t
 
 
 <script>
-const canvas1 = document.createElement("canvas"); // siempre "canvas", variable JS = canvas1
-const container = document.getElementById("red-biomolecular1");
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("red-biomolecular1");
+    const canvas1 = document.createElement("canvas");
+    container.appendChild(canvas1);
+    canvas1.width = container.offsetWidth;
+    canvas1.height = 250;
 
-canvas1.width = container.offsetWidth;
-canvas1.height = 250;
+    const ctx1 = canvas1.getContext("2d");
 
-container.appendChild(canvas1);
+    let particles1 = [];
 
-const ctx1 = canvas1.getContext("2d");
-
-let particles1 = [];
-
-for (let i = 0; i < 60; i++) {
-    particles1.push({
-        x: Math.random() * canvas1.width,
-        y: Math.random() * canvas1.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5
-    });
-}
-
-function draw1() {
-    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-
-    particles1.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if(p.x < 0 || p.x > canvas1.width) p.vx *= -1;
-        if(p.y < 0 || p.y > canvas1.height) p.vy *= -1;
-
-        ctx1.beginPath();
-        ctx1.arc(p.x, p.y, 2, 0, Math.PI*2);
-        ctx1.fillStyle = "white";
-        ctx1.fill();
-
-        particles1.forEach(p2=>{
-            let dx = p.x - p2.x;
-            let dy = p.y - p2.y;
-            let dist = Math.sqrt(dx*dx + dy*dy);
-
-            if(dist < 80){
-                ctx1.beginPath();
-                ctx1.moveTo(p.x, p.y);
-                ctx1.lineTo(p2.x, p2.y);
-                ctx1.strokeStyle = "rgba(255,255,255,0.15)";
-                ctx1.stroke();
-            }
+    for (let i = 0; i < 60; i++) {
+        particles1.push({
+            x: Math.random() * canvas1.width,
+            y: Math.random() * canvas1.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5
         });
-    });
+    }
 
-    requestAnimationFrame(draw1);
-}
+    function draw1() {
+        ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
 
-draw1();
+        particles1.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if(p.x < 0 || p.x > canvas1.width) p.vx *= -1;
+            if(p.y < 0 || p.y > canvas1.height) p.vy *= -1;
+
+            ctx1.beginPath();
+            ctx1.arc(p.x, p.y, 2, 0, Math.PI*2);
+            ctx1.fillStyle = "white";
+            ctx1.fill();
+
+            particles1.forEach(p2=>{
+                let dx = p.x - p2.x;
+                let dy = p.y - p2.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+
+                if(dist < 80){
+                    ctx1.beginPath();
+                    ctx1.moveTo(p.x, p.y);
+                    ctx1.lineTo(p2.x, p2.y);
+                    ctx1.strokeStyle = "rgba(255,255,255,0.15)";
+                    ctx1.stroke();
+                }
+            });
+        });
+
+        requestAnimationFrame(draw1);
+    }
+
+    draw1();
+});
 </script>
+
 
 
 
       
-
-      <div style="text-align:center;margin-top:20px;">
-
-<button onclick="iniciarExperiencia()" style="font-size:20px;padding:10px;">
-Activar experiencia sonora en IHA®
-</button>
-
-<audio id="musica">
-<source src="musicasilencio.mpeg" type="audio/mpeg">
-</audio>
-
-</div>
-
-<script>
-function iniciarExperiencia() {
-document.getElementById("musica").play();
-}
-</script>
-
  <br><br>
     
  <img src="next111.png" alt="" class="tech-image" />
