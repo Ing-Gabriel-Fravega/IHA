@@ -551,7 +551,7 @@ UN ECOSISTEMA TECNOLÓGICO/IHA®/TFC® que podría revolucionar el mundo de la t
 <div id="red-biomolecular1" style="background:#0b0f1a;"></div>
 
 <script>
-const canvas = document.createElement("canvas");
+const canva2s = document.createElement("canvas2");
 const container = document.getElementById("red-biomolecular1");
 
 canvas.width = container.offsetWidth;
@@ -559,57 +559,57 @@ canvas.height = 250;
 
 container.appendChild(canvas);
 
-const ctx = canvas.getContext("2d");
+const ctx2 = canvas2.getContext("2d");
 
-let particles = [];
+let particles2 = [];
 
 for (let i = 0; i < 60; i++) {
-particles.push({
-x: Math.random() * canvas.width,
-y: Math.random() * canvas.height,
+particles2.push({
+x: Math.random() * canvas2.width,
+y: Math.random() * canvas2.height,
 vx: (Math.random() - 0.5) * 0.5,
 vy: (Math.random() - 0.5) * 0.5
 });
 }
 
-function draw() {
+function draw2() {
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx2.clearRect(0,0,canvas2.width,canvas2.height);
 
-particles.forEach(p => {
+particles2.forEach(p => {
 
 p.x += p.vx;
 p.y += p.vy;
 
-if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
-if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+if(p.x < 0 || p.x > canvas2.width) p.vx *= -1;
+if(p.y < 0 || p.y > canvas2.height) p.vy *= -1;
 
-ctx.beginPath();
-ctx.arc(p.x,p.y,2,0,Math.PI*2);
-ctx.fillStyle="white";
-ctx.fill();
+ctx2.beginPath();
+ctx2.arc(p.x,p.y,2,0,Math.PI*2);
+ctx2.fillStyle="white";
+ctx2.fill();
 
-particles.forEach(p2=>{
+particles2.forEach(p2=>{
 let dx=p.x-p2.x;
 let dy=p.y-p2.y;
 let dist=Math.sqrt(dx*dx+dy*dy);
 
 if(dist<80){
-ctx.beginPath();
-ctx.moveTo(p.x,p.y);
-ctx.lineTo(p2.x,p2.y);
-ctx.strokeStyle="rgba(255,255,255,0.15)";
-ctx.stroke();
+ctx2.beginPath();
+ctx2.moveTo(p.x,p.y);
+ctx2.lineTo(p2.x,p2.y);
+ctx2.strokeStyle="rgba(255,255,255,0.15)";
+ctx2.stroke();
 }
 });
 
 });
 
-requestAnimationFrame(draw);
+requestAnimationFrame(draw2);
 
 }
 
-draw();
+draw2();
 </script>
 
 
