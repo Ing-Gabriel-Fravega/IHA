@@ -565,10 +565,12 @@ for (let i = 0; i < 60; i++) {
   });
 }
 
-let nuclearExplosionActive = null; // Guardará la explosión nuclear
+let nuclearExplosionActive = null;
 
 function drawNuclear() {
   ctxNuclear.clearRect(0, 0, canvasNuclear.width, canvasNuclear.height);
+
+  let connectedParticles = 0; // Contador global de partículas entrelazadas
 
   particlesNuclear.forEach((pN, indexN) => {
     pN.x += pN.vx;
@@ -577,13 +579,12 @@ function drawNuclear() {
     if (pN.x < 0 || pN.x > canvasNuclear.width) pN.vx *= -1;
     if (pN.y < 0 || pN.y > canvasNuclear.height) pN.vy *= -1;
 
-    // Dibujar la partícula amarilla
     ctxNuclear.beginPath();
     ctxNuclear.arc(pN.x, pN.y, 2, 0, Math.PI * 2);
     ctxNuclear.fillStyle = "yellow";
     ctxNuclear.fill();
 
-    let connectionsN = 0;
+    let hasConnection = false;
 
     particlesNuclear.forEach((p2N, jN) => {
       if (indexN === jN) return;
@@ -593,7 +594,7 @@ function drawNuclear() {
       let distN = Math.sqrt(dxN * dxN + dyN * dyN);
 
       if (distN < 80) {
-        connectionsN++;
+        hasConnection = true;
         ctxNuclear.beginPath();
         ctxNuclear.moveTo(pN.x, pN.y);
         ctxNuclear.lineTo(p2N.x, p2N.y);
@@ -602,17 +603,28 @@ function drawNuclear() {
       }
     });
 
-    // Activar explosión nuclear si hay más de 10 conexiones
-    if (connectionsN > 10 && !nuclearExplosionActive) {
-      nuclearExplosionActive = {
-        x: pN.x,
-        y: pN.y,
-        radius: 0,
-        maxRadius: 100,
-        colors: ["red","orange","yellow","green","cyan","blue","magenta"]
-      };
-    }
+    if (hasConnection) connectedParticles++;
   });
+
+  // Activar explosión nuclear si hay 10 o más partículas conectadas
+  if (connectedParticles >= 10 && !nuclearExplosionActive) {
+    let firstConnected = particlesNuclear.find(p => {
+      return particlesNuclear.some(p2 => {
+        let dx = p.x - p2.x;
+        let dy = p.y - p2.y;
+        let dist = Math.sqrt(dx*dx + dy*dy);
+        return dist < 80 && p !== p2;
+      });
+    });
+
+    nuclearExplosionActive = {
+      x: firstConnected.x,
+      y: firstConnected.y,
+      radius: 0,
+      maxRadius: 100,
+      colors: ["red","orange","yellow","green","cyan","blue","magenta"]
+    };
+  }
 
   // Dibujar explosión nuclear
   if (nuclearExplosionActive) {
@@ -633,7 +645,7 @@ function drawNuclear() {
     });
 
     if (nuclearExplosionActive.radius > nuclearExplosionActive.maxRadius) {
-      nuclearExplosionActive = null; // Termina la explosión
+      nuclearExplosionActive = null;
     }
   }
 
@@ -642,7 +654,6 @@ function drawNuclear() {
 
 drawNuclear();
 </script>
-
       
       
 
