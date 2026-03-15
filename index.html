@@ -539,7 +539,111 @@ function drawYellow() {
 drawYellow();
 </script>
 
-    
+
+      
+
+<div id="red-biomolecular-nuclear" style="background:#0b0f1a;"></div> 
+<script>
+const canvasNuclear = document.createElement("canvas");
+const containerNuclear = document.getElementById("red-biomolecular-nuclear");
+
+canvasNuclear.width = containerNuclear.offsetWidth;
+canvasNuclear.height = 250;
+
+containerNuclear.appendChild(canvasNuclear);
+
+const ctxNuclear = canvasNuclear.getContext("2d");
+
+let particlesNuclear = [];
+
+for (let i = 0; i < 60; i++) {
+  particlesNuclear.push({
+    x: Math.random() * canvasNuclear.width,
+    y: Math.random() * canvasNuclear.height,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+let nuclearExplosionActive = null; // Guardará la explosión nuclear
+
+function drawNuclear() {
+  ctxNuclear.clearRect(0, 0, canvasNuclear.width, canvasNuclear.height);
+
+  particlesNuclear.forEach((pN, indexN) => {
+    pN.x += pN.vx;
+    pN.y += pN.vy;
+
+    if (pN.x < 0 || pN.x > canvasNuclear.width) pN.vx *= -1;
+    if (pN.y < 0 || pN.y > canvasNuclear.height) pN.vy *= -1;
+
+    // Dibujar la partícula amarilla
+    ctxNuclear.beginPath();
+    ctxNuclear.arc(pN.x, pN.y, 2, 0, Math.PI * 2);
+    ctxNuclear.fillStyle = "yellow";
+    ctxNuclear.fill();
+
+    let connectionsN = 0;
+
+    particlesNuclear.forEach((p2N, jN) => {
+      if (indexN === jN) return;
+
+      let dxN = pN.x - p2N.x;
+      let dyN = pN.y - p2N.y;
+      let distN = Math.sqrt(dxN * dxN + dyN * dyN);
+
+      if (distN < 80) {
+        connectionsN++;
+        ctxNuclear.beginPath();
+        ctxNuclear.moveTo(pN.x, pN.y);
+        ctxNuclear.lineTo(p2N.x, p2N.y);
+        ctxNuclear.strokeStyle = "rgba(255,255,0,0.15)";
+        ctxNuclear.stroke();
+      }
+    });
+
+    // Activar explosión nuclear si hay más de 10 conexiones
+    if (connectionsN > 10 && !nuclearExplosionActive) {
+      nuclearExplosionActive = {
+        x: pN.x,
+        y: pN.y,
+        radius: 0,
+        maxRadius: 100,
+        colors: ["red","orange","yellow","green","cyan","blue","magenta"]
+      };
+    }
+  });
+
+  // Dibujar explosión nuclear
+  if (nuclearExplosionActive) {
+    nuclearExplosionActive.radius += 4;
+
+    nuclearExplosionActive.colors.forEach((color, i) => {
+      ctxNuclear.beginPath();
+      ctxNuclear.arc(
+        nuclearExplosionActive.x,
+        nuclearExplosionActive.y,
+        nuclearExplosionActive.radius * (1 - i / nuclearExplosionActive.colors.length),
+        0,
+        Math.PI * 2
+      );
+      ctxNuclear.strokeStyle = color;
+      ctxNuclear.lineWidth = 3;
+      ctxNuclear.stroke();
+    });
+
+    if (nuclearExplosionActive.radius > nuclearExplosionActive.maxRadius) {
+      nuclearExplosionActive = null; // Termina la explosión
+    }
+  }
+
+  requestAnimationFrame(drawNuclear);
+}
+
+drawNuclear();
+</script>
+
+      
       
 
       <div style="text-align:center;margin-top:20px;">
