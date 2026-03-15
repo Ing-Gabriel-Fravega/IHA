@@ -213,6 +213,11 @@ Activar experiencia sonora en IHA®
 <source src="musicasilencio.mpeg" type="audio/mpeg">
 </audio>
 
+
+
+
+
+     
 </div>
 
 
@@ -451,9 +456,89 @@ requestAnimationFrame(draw);
 draw();
 </script>
 
+---------------------------------
+<script>
+const canvasYellow = document.createElement("canvas");
+const containerYellow = document.getElementById("red-biomolecular-yellow");
 
+canvasYellow.width = containerYellow.offsetWidth;
+canvasYellow.height = 250;
 
+containerYellow.appendChild(canvasYellow);
 
+const ctxYellow = canvasYellow.getContext("2d");
+
+let particlesYellow = [];
+
+for (let i = 0; i < 60; i++) {
+  particlesYellow.push({
+    x: Math.random() * canvasYellow.width,
+    y: Math.random() * canvasYellow.height,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+let flashesYellow = [];
+
+function drawYellow() {
+  ctxYellow.clearRect(0, 0, canvasYellow.width, canvasYellow.height);
+
+  particlesYellow.forEach((pY, indexY) => {
+    pY.x += pY.vx;
+    pY.y += pY.vy;
+
+    if (pY.x < 0 || pY.x > canvasYellow.width) pY.vx *= -1;
+    if (pY.y < 0 || pY.y > canvasYellow.height) pY.vy *= -1;
+
+    // Dibujar la partícula amarilla
+    ctxYellow.beginPath();
+    ctxYellow.arc(pY.x, pY.y, 2, 0, Math.PI * 2);
+    ctxYellow.fillStyle = "yellow";
+    ctxYellow.fill();
+
+    particlesYellow.forEach((p2Y, jY) => {
+      if (indexY === jY) return;
+
+      let dxY = pY.x - p2Y.x;
+      let dyY = pY.y - p2Y.y;
+      let distY = Math.sqrt(dxY * dxY + dyY * dyY);
+
+      if (distY < 80) {
+        ctxYellow.beginPath();
+        ctxYellow.moveTo(pY.x, pY.y);
+        ctxYellow.lineTo(p2Y.x, p2Y.y);
+        ctxYellow.strokeStyle = "rgba(255,255,0,0.15)";
+        ctxYellow.stroke();
+      }
+
+      // Colisión: crear onda de destello
+      if (distY < 5) {
+        flashesYellow.push({x: pY.x, y: pY.y, radius: 0, alpha: 0.6, maxRadius: 40});
+      }
+    });
+  });
+
+  // Dibujar destellos como ondas
+  flashesYellow.forEach((fY, iY) => {
+    ctxYellow.beginPath();
+    ctxYellow.arc(fY.x, fY.y, fY.radius, 0, Math.PI * 2);
+    ctxYellow.strokeStyle = `rgba(255,255,0,${fY.alpha})`;
+    ctxYellow.lineWidth = 2;
+    ctxYellow.stroke();
+
+    fY.radius += 2;
+    fY.alpha -= 0.02;
+    if (fY.alpha <= 0) flashesYellow.splice(iY, 1);
+  });
+
+  requestAnimationFrame(drawYellow);
+}
+
+drawYellow();
+</script>
+
+      ---------------------------------------------------------
       
 
       <div style="text-align:center;margin-top:20px;">
