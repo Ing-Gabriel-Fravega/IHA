@@ -655,6 +655,157 @@ function drawNuclear() {
 drawNuclear();
 </script>
       
+
+      
+
+<div id="red-biomolecular-cosmos" style="background:#0b0f1a;"></div>
+<script>
+const canvasCosmos = document.createElement("canvas");
+const containerCosmos = document.getElementById("red-biomolecular-cosmos");
+
+canvasCosmos.width = containerCosmos.offsetWidth;
+canvasCosmos.height = 250;
+
+containerCosmos.appendChild(canvasCosmos);
+
+const ctxCosmos = canvasCosmos.getContext("2d");
+
+// Crear partículas
+let particlesCosmos = [];
+for (let i = 0; i < 60; i++) {
+  particlesCosmos.push({
+    x: Math.random() * canvasCosmos.width,
+    y: Math.random() * canvasCosmos.height,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+// Guardar explosiones nucleares activas
+let explosionsCosmos = [];
+
+// Función para detectar clusters usando DFS
+function getClusters(particles, maxDist) {
+  let visited = new Set();
+  let clusters = [];
+
+  function dfs(index, cluster) {
+    visited.add(index);
+    cluster.push(index);
+    for (let j = 0; j < particles.length; j++) {
+      if (visited.has(j)) continue;
+      let dx = particles[index].x - particles[j].x;
+      let dy = particles[index].y - particles[j].y;
+      if (Math.sqrt(dx*dx + dy*dy) < maxDist) {
+        dfs(j, cluster);
+      }
+    }
+  }
+
+  for (let i = 0; i < particles.length; i++) {
+    if (!visited.has(i)) {
+      let cluster = [];
+      dfs(i, cluster);
+      clusters.push(cluster);
+    }
+  }
+
+  return clusters;
+}
+
+function drawCosmos() {
+  ctxCosmos.clearRect(0, 0, canvasCosmos.width, canvasCosmos.height);
+
+  // Mover partículas
+  particlesCosmos.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0 || p.x > canvasCosmos.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvasCosmos.height) p.vy *= -1;
+  });
+
+  // Dibujar líneas y detectar clusters
+  let clusters = getClusters(particlesCosmos, 80);
+
+  clusters.forEach(cluster => {
+    // Dibujar conexiones
+    for (let i = 0; i < cluster.length; i++) {
+      let p1 = particlesCosmos[cluster[i]];
+      for (let j = i+1; j < cluster.length; j++) {
+        let p2 = particlesCosmos[cluster[j]];
+        ctxCosmos.beginPath();
+        ctxCosmos.moveTo(p1.x, p1.y);
+        ctxCosmos.lineTo(p2.x, p2.y);
+        ctxCosmos.strokeStyle = "rgba(255,255,0,0.15)";
+        ctxCosmos.stroke();
+      }
+    }
+
+    // Explosión nuclear si el cluster tiene 10 o más partículas
+    if (cluster.length >= 10) {
+      // Calcular centro del cluster
+      let cx = 0, cy = 0;
+      cluster.forEach(idx => {
+        cx += particlesCosmos[idx].x;
+        cy += particlesCosmos[idx].y;
+      });
+      cx /= cluster.length;
+      cy /= cluster.length;
+
+      // Añadir explosión al array si no hay otra muy cercana
+      let exists = explosionsCosmos.some(exp => {
+        let dx = exp.x - cx;
+        let dy = exp.y - cy;
+        return Math.sqrt(dx*dx + dy*dy) < 50;
+      });
+
+      if (!exists) {
+        explosionsCosmos.push({
+          x: cx,
+          y: cy,
+          radius: 0,
+          maxRadius: 100,
+          colors: ["red","orange","yellow","green","cyan","blue","magenta"]
+        });
+      }
+    }
+  });
+
+  // Dibujar explosiones nucleares
+  explosionsCosmos.forEach((exp, i) => {
+    exp.radius += 4;
+    exp.colors.forEach((color, j) => {
+      ctxCosmos.beginPath();
+      ctxCosmos.arc(
+        exp.x,
+        exp.y,
+        exp.radius * (1 - j / exp.colors.length),
+        0,
+        Math.PI * 2
+      );
+      ctxCosmos.strokeStyle = color;
+      ctxCosmos.lineWidth = 3;
+      ctxCosmos.stroke();
+    });
+    if (exp.radius > exp.maxRadius) explosionsCosmos.splice(i,1);
+  });
+
+  // Dibujar partículas
+  particlesCosmos.forEach(p => {
+    ctxCosmos.beginPath();
+    ctxCosmos.arc(p.x, p.y, 2, 0, Math.PI*2);
+    ctxCosmos.fillStyle = "yellow";
+    ctxCosmos.fill();
+  });
+
+  requestAnimationFrame(drawCosmos);
+}
+
+drawCosmos();
+</script>
+
+
+
       
 
       <div style="text-align:center;margin-top:20px;">
