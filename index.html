@@ -1067,9 +1067,9 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
    <br><br>
 
 
-<h3 id="resultado-iha-1" style="color:yellow; font-family:Arial;"></h3>
+<h3 id="resultado-iha-1" style="color:#00ccff; font-family:Arial;"></h3>
 
-<div id="container-iha-1" style="height:250px; width:100%;"></div>
+<div id="container-iha-1" style="height:250px; width:100%; background:#0b0f1a;"></div>
 
 <script>
 (function(){
@@ -1079,11 +1079,9 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
 
   const canvas = document.createElement("canvas");
 
-  // 🔧 CLAVE: usar el tamaño REAL del container
   canvas.width = container.clientWidth;
   canvas.height = 250;
-
-  canvas.style.display = "block"; // evita desbordes raros
+  canvas.style.display = "block";
 
   container.appendChild(canvas);
 
@@ -1113,15 +1111,18 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
       if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
       if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
+      // burbuja
       ctx.beginPath();
       ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
       ctx.fillStyle = "#111";
-      ctx.strokeStyle = "yellow";
+      ctx.strokeStyle = "#00ccff";
+      ctx.lineWidth = 1.5;
       ctx.fill();
       ctx.stroke();
 
+      // texto IHA
       ctx.font = "bold 8px Arial";
-      ctx.fillStyle = "yellow";
+      ctx.fillStyle = "#00ccff";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("IHA", p.x, p.y);
@@ -1144,7 +1145,7 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
               x: (p.x + p2.x)/2,
               y: (p.y + p2.y)/2,
               radius: 0,
-              alpha: 0.6
+              alpha: 0.9
             });
           }
         } else {
@@ -1153,18 +1154,22 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
       });
     });
 
+    // 🔥 DESTELLO MEJORADO
     flashes.forEach((f, i) => {
       ctx.beginPath();
       ctx.arc(f.x, f.y, f.radius, 0, Math.PI * 2);
 
-      ctx.fillStyle = `rgba(255,255,0,${f.alpha * 0.3})`;
+      // relleno más visible
+      ctx.fillStyle = `rgba(255,255,0,${f.alpha * 0.5})`;
       ctx.fill();
 
+      // borde más fuerte
       ctx.strokeStyle = `rgba(255,255,0,${f.alpha})`;
+      ctx.lineWidth = 2;
       ctx.stroke();
 
-      f.radius += 2;
-      f.alpha -= 0.02;
+      f.radius += 3;   // más rápido → más dinámico
+      f.alpha -= 0.04; // se desvanece más rápido pero visible
 
       if (f.alpha <= 0) flashes.splice(i, 1);
     });
@@ -1174,11 +1179,9 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
 
   draw();
 
-  // 🔥 DETECCIÓN MÁS ROBUSTA
   window.addEventListener("scroll", () => {
     const rect = container.getBoundingClientRect();
 
-    // cuando sale completamente de pantalla
     if (rect.top > window.innerHeight || rect.bottom < 0) {
       title.innerText = "Total de colisiones: " + collisionCounter;
     }
@@ -1186,8 +1189,6 @@ Esta frase sintetiza la hipótesis disruptiva: la descendencia se forma a partir
 
 })();
 </script>
-
-
       
       
  <p style="font-size: 20px;">
