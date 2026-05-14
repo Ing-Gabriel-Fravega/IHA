@@ -187,6 +187,67 @@
       line-height: 1.5;
     }
   </style>
+
+
+  <style>
+.titulo-neon{
+
+    font-size: clamp(0.9rem, 2vw, 1.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff,
+        0 0 80px #00ffff;
+
+    animation:
+        flicker 2.5s infinite alternate,
+        pulse 3s infinite;
+}
+
+@keyframes flicker{
+
+    0%,18%,22%,25%,53%,57%,100%{
+        opacity:1;
+    }
+
+    20%,24%,55%{
+        opacity:0.35;
+    }
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        filter:hue-rotate(0deg);
+    }
+
+    50%{
+        transform:scale(1.05);
+        filter:hue-rotate(30deg);
+    }
+
+    100%{
+        transform:scale(1);
+        filter:hue-rotate(0deg);
+    }
+}
+
+ </style>
+
+
+
+
+
+
+
+  
 </head>
 <body>
   <header>
