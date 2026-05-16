@@ -1,3 +1,3 @@
-# EL-NUEVO-ESCALON
-Manifiesto, elaborado, para contribuir a un nuevo salto en la tecnología aplicada basado en la IHA®-TFC®-Ing. Gabriel Frávega
+# IHA®
+Desarrollos en tecnología aplicada basados en la IHA®-TFC®-Ing. Gabriel Frávega®-16/05/2026
 
