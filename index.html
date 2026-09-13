@@ -290,15 +290,19 @@ text-shadow:
 
 .titulo-amarillo.neon{
 
-    font-size: clamp(0.9rem, 2vw, 1.6rem);
+font-size: clamp(0.9rem, 2vw, 1.6rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ffff00
+    color: #ffff00;
+    /* Efecto de resplandor Neón Amarillo */
+    text-shadow: 
+        0 0 5px #ffff00,  /* Resplandor interno sutil */
+        0 0 10px #ffff00, /* Resplandor medio */
+        0 0 20px #ffcc00, /* Resplandor exterior intenso */
+        0 0 40px #ff9900; /* Difusión de luz en el fondo */
 
-text-shadow:
-  0 0 5px #ffff00
-  0 0 10px rgba(255,255,0,0.7);
+
 
  animation:
         flicker 2.5s infinite alternate,
