@@ -288,25 +288,47 @@ text-shadow:
 }
   
 
+
+
+
+
+
+
+
+
+
+
+
+    
 .titulo-amarillo.neon{
 
 font-size: clamp(0.9rem, 2vw, 1.6rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffff00;
-    /* Efecto de resplandor Neón Amarillo */
-    text-shadow: 
-        0 0 5px #ffff00,  /* Resplandor interno sutil */
-        0 0 10px #ffff00, /* Resplandor medio */
-        0 0 20px #ffcc00, /* Resplandor exterior intenso */
-        0 0 40px #ff9900; /* Difusión de luz en el fondo */
+font-weight: 900;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: #ffff00;
+
+/* Efecto de borde negro + Resplandor Neón */
+text-shadow: 
+    /* Contorno / Borde negro nítido en las 4 direcciones */
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000,
+    /* Borde negro más grueso opcional (descomenta si necesitas más grosor) */
+    /* -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, */
+    
+    /* Tus resplandores originales de neón */
+    0 0 5px #ffff00,  
+    0 0 10px #ffff00, 
+    0 0 20px #ffcc00, 
+    0 0 40px #ff9900; 
+
+animation:
+    flicker 2.5s infinite alternate,
+    pulse 3s infinite;
 
 
-
- animation:
-        flicker 2.5s infinite alternate,
-        pulse 3s infinite;
 }
 
 
