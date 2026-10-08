@@ -148,6 +148,49 @@
       box-sizing: border-box;
     }
 
+/* Estilo base común para todas las imágenes tech */
+.tech-image, .tech-image-fuchsia {
+  max-width: 100vw;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Efecto Turquesa (original) */
+.tech-image {
+  box-shadow: 0 4px 12px rgba(0,255,255,0.4);
+  animation: parpadeo-turquesa 2s infinite;
+}
+
+/* Efecto Fucsia (nuevo) */
+.tech-image-fuchsia {
+  box-shadow: 0 4px 12px rgba(255,0,127,0.4);
+  animation: parpadeo-fucsia 2s infinite;
+}
+
+/* Animaciones de parpadeo */
+@keyframes parpadeo-turquesa {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,255,255,0.3); }
+  50% { box-shadow: 0 0 25px rgba(0,255,255,0.9); }
+}
+
+@keyframes parpadeo-fucsia {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,0,127,0.3); }
+  50% { box-shadow: 0 0 25px rgba(255,0,127,0.9); }
+}
+
+
+    
+
+
+
+
+
+
+    
     /* Video responsivo */
     video {
       max-width: 100vw; /* No superar ancho viewport */
@@ -565,7 +608,11 @@ Activar experiencia sonora en IHA®
    <img src="mamoL4.png" alt="" class="tech-image" />
   </p> 
 
-   
+<p>
+      <img src="mamol4.png" alt="" class="tech-image-fuchsia" />
+</p>
+
+  
 <br><br>
 <div class="container">
  <img src="separador1.png" alt="" class="tech-image" />
