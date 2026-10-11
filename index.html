@@ -671,7 +671,44 @@ Activar experiencia sonora en IHA®
    
 <br><br>
 
+ <div class="container">
 
+    <section class="sobre-mi">  
+      
+      <h2>IHA® - Máquina de análisis y generación molecular - Ing. Gabriel Frávega®</h2>
+        <video id="video5" playsinline controls>
+          <source src="MAMOL20.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+          </video>
+<button onclick="playVideo5()">Reproducir con sonido</button>
+<br><br>
+
+<script>
+function playVideo5() {
+  const vid = document.getElementById('video5');
+  vid.muted = false; // activa el sonido
+  vid.play().catch(error => {
+    console.log("No se pudo reproducir automáticamente:", error);
+  });
+}
+</script>
+ </section>
+   </div>
+
+
+
+
+
+   
+<br><br>
+
+
+
+
+
+
+
+   
    
 <div class="container">
  <img src="separador1.png" alt="" class="tech-image" />
